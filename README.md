@@ -3,12 +3,13 @@
 ## Requirements
 | Software                                                 | Link            | Required |
 | ---------------------------------------------------------|-----------------| ---------|
-| **json-server**                                          |    [here](https://github.com/typicode/json-server)|    Yes   |
-| **jsonwebtoken**                                         |    [here](https://github.com/auth0/node-jsonwebtoken)|    Yes   |
+| **json-server**                                          |[here](https://github.com/typicode/json-server)   |    Yes   |
+| **jsonwebtoken**                                         |[here](https://github.com/auth0/node-jsonwebtoken)|    Yes   |
+| **Angular: 6.0.5**                                       |[here](https://cli.angular.io)|    Yes   |
 
 ## Run
-1. Download the [repository](https://github.com/fralomba/Facial-Expression-Prediction.git)
+1. Download the [repository](https://github.com/SestoAle/PhdAngular)
 
-2. Open main.py and change the values in order to obtain the expressions you prefer.
+2. Go to project folder and execute 'node server.js' to start json-server and jsonwebtoken
 
-3. The script will output both the neutral and expressive faces.
+3. Go to project folder and execute 'ng serve' to start the Angular App (thorugh Angular CLI)
