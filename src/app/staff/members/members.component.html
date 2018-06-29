@@ -1,0 +1,21 @@
+<h2 class="grey"><app-back></app-back>{{phd.name}} - {{cycle.num}}</h2>
+<mat-tab-group (selectedTabChange) = "ngOnInit()" style="margin-top: 10px;" mat-stretch-tabs>
+  <mat-tab label="Faculty">
+  	<div class="grey" style="text-align: right">
+		<a mat-button [routerLink]="['/add-member', phd.id, cycle.id, 'faculty', -1]">
+			<mat-icon>add</mat-icon>
+			<span>Add Member</span>
+		</a>
+	</div>
+    <app-faculty-list [phd]="phd" [cycle]="cycle"></app-faculty-list>
+  </mat-tab>
+  <mat-tab label="Students">
+    <div class="grey" style="text-align: right">
+		<a mat-button [routerLink]="['/add-member', phd.id, cycle.id, 'student', -1]">
+			<mat-icon>add</mat-icon>
+			<span>Add Member</span>
+		</a>
+	</div>
+	<app-student-list [phd]="phd" [cycle]="cycle"></app-student-list>
+  </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,78 @@
+{
+  "phdPrograms": [
+    {
+      "name": "Machine Learning",
+      "id": 1
+    }
+  ],
+  "cycleOfPhds": [
+    {
+      "num": "XXIII",
+      "durationInYears": 3,
+      "phdProgramId": "1",
+      "id": 1
+    },
+    {
+      "num": "XXIV",
+      "durationInYears": 3,
+      "phdProgramId": "1",
+      "id": 2
+    },
+    {
+      "num": "XXV",
+      "durationInYears": 3,
+      "phdProgramId": "1",
+      "id": 3
+    }
+  ],
+  "faculties": [
+    {
+      "firstname": "Paolo",
+      "lastname": "Frasconi",
+      "webpage": "www.paolofrasconi.it",
+      "cycleOfPhdId": "1",
+      "id": 1
+    },
+    {
+      "firstname": "Pietro",
+      "lastname": "Pala",
+      "webpage": "www.pietropala.it",
+      "cycleOfPhdId": "1",
+      "id": 2
+    }
+  ],
+  "students": [
+    {
+      "firstname": "Alessandro",
+      "lastname": "Sestini",
+      "webpage": "wwww.alessandrosestini.it",
+      "facultyId": 2,
+      "cycleOfPhdId": "1",
+      "id": 1
+    },
+    {
+      "firstname": "Francesco",
+      "lastname": "Lombardi",
+      "webpage": "www.francescolombardi.it",
+      "facultyId": 2,
+      "cycleOfPhdId": "1",
+      "id": 2
+    },
+    {
+      "firstname": "Luca",
+      "lastname": "Angioloni",
+      "webpage": "www.lucaangioloni.it",
+      "facultyId": 2,
+      "cycleOfPhdId": "1",
+      "id": 3
+    },
+    {
+      "facultyId": 2,
+      "firstname": "Alessandro",
+      "lastname": "Minervini",
+      "webpage": "alessandrominervini.it",
+      "cycleOfPhdId": "1",
+      "id": 4
+    }
+  ]
+}

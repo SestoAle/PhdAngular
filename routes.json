@@ -1,0 +1,3 @@
+{
+  "/phdProgram/:phdProgramId/cycleOfPhd/:cycleOfPhdId": "/cycleOfPhd/:cycleOfPhdId"
+}

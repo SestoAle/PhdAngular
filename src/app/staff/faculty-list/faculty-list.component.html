@@ -1,0 +1,10 @@
+<mat-nav-list>
+    <mat-list-item [routerLink]="['/add-member', phd.id, cycle.id, 'faculty', faculty.id]" *ngFor="let faculty of faculties">
+	    <mat-icon matListIcon>account_box</mat-icon>
+	    <a matLine> {{faculty.firstname}} {{faculty.lastname}} </a>
+	    <p class="grey" matLine> {{faculty.webpage}} </p>
+		
+	    <app-edit-remove [model]="faculty" [edit_link]="['/add-member', phd.id, cycle.id, 'faculty', faculty.id]" (cancelModel)="removeFaculty($event, faculty.id)"></app-edit-remove>
+   	
+    </mat-list-item>
+</mat-nav-list>

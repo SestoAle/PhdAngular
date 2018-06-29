@@ -1,0 +1,25 @@
+<div class="grey">
+	<h2><app-back></app-back> {{phd.name}}</h2>
+</div>
+
+<div class="grey" style="text-align: right">
+	<a mat-button [routerLink]="['/add-cycle', phd.id, -1]">
+		<mat-icon> add</mat-icon>
+		<span>Add Cycle</span>
+	</a>
+</div>
+
+<div *ngIf="cycles != null && cycles.length < 1" class="alert alert-danger">
+	No cycles added!
+</div>
+
+<mat-nav-list>
+    <mat-list-item [routerLink] = "['/members', phd.id, cycle.id]"  *ngFor="let cycle of cycles">
+	    <mat-icon matListIcon>folder</mat-icon>
+	    <a matLine>Cycle: {{cycle.num}}</a>
+	    <p matLine>Duration in years: {{cycle.durationInYears}}</p>
+	    
+	    <app-edit-remove [model]="cycle" [edit_link]="['add-cycle', phd.id, cycle.id]" (cancelModel)="removeCycle($event, cycle.id)"></app-edit-remove>
+   	
+    </mat-list-item>
+</mat-nav-list>

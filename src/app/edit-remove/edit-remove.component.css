@@ -1,0 +1,20 @@
+.edit-text {
+	margin-left: 5px;
+	color: grey !important;
+}
+
+.edit-link {
+	margin-left: 5px;
+	float: right;
+	color:grey !important
+}
+
+a.edit-link:hover, a.edit-text:hover {
+	color:black !important
+}
+
+.edit-remove {
+	margin: 0; 
+	text-align: right;
+	color: red;
+}
