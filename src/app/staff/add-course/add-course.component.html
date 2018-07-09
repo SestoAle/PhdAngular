@@ -1,0 +1,124 @@
+<div class="grey back-container">
+	<app-back></app-back><span>Back</span>
+</div>
+<form name="form" (ngSubmit)="f.form.valid && addCourse()" #f="ngForm" novalidate>
+    <div class="form-group center-block" [ngClass]="{ 'has-error': f.submitted && !coursetitle.valid && !courseabstract.valid && !coursesite.valid && !coursecfu.valid && !courseduration.valid && !courseyear.valid}">
+		<h4 class ="grey">PhD {{phd.name}}</h4>
+		<div *ngIf="error" class="alert alert-danger">Something is went wrong, try again!</div>
+		<mat-form-field class="full-width" >
+	    	<input matInput value="newCourse.title" placeholder="Insert course title" type="text" name="coursetitle" [(ngModel)]="newCourse.title" #coursetitle="ngModel" required />
+		</mat-form-field>
+		<mat-error *ngIf="f.submitted && !coursetitle.valid">
+			The title is required!
+		</mat-error>
+		<mat-form-field class="full-width" >
+	    	<input matInput value="newCourse.year" placeholder="Insert course begin year" type="number" name="courseyear" [(ngModel)]="newCourse.year" #courseyear="ngModel" required />
+		</mat-form-field>
+		<mat-error *ngIf="f.submitted && !courseyear.valid">
+			The year is required!
+		</mat-error>
+		<mat-form-field class="full-width" >
+	    	<textarea matInput value="newCourse.abstract"  placeholder="Insert course abstract" type="text" name="courseabstract" [(ngModel)]="newCourse.abstract" #courseabstract="ngModel" required></textarea>
+		</mat-form-field>
+		<mat-error *ngIf="f.submitted && !courseabstract.valid">
+			The abstract is required!
+		</mat-error>
+		<mat-form-field class="full-width" >
+	    	<input matInput value="newCourse.site"  placeholder="Insert course site" type="text" name="coursesite" [(ngModel)]="newCourse.site" #coursesite="ngModel" required />
+		</mat-form-field>
+		<mat-error *ngIf="f.submitted && !coursesite.valid">
+			The site is required!
+		</mat-error>
+		<mat-form-field class="full-width" >
+	    	<input matInput value="newCourse.duration"  placeholder="Insert course duration" type="number" name="courseduration" [(ngModel)]="newCourse.duration" #courseduration="ngModel" required />
+		</mat-form-field>
+		<mat-error *ngIf="f.submitted && !courseduration.valid">
+			The duration is required!
+		</mat-error>
+		<mat-form-field class="full-width" >
+	    	<input matInput value="newCourse.cfu"  placeholder="Insert course CFU" type="number" name="coursedcfu" [(ngModel)]="newCourse.cfu" #coursecfu="ngModel" required />
+		</mat-form-field>
+		<mat-error *ngIf="f.submitted && !coursecfu.valid">
+			The CFU is required!
+		</mat-error>
+		
+		<h6 class="grey">Insert teacher/s: </h6>
+		<div class="teacher-container">
+			<mat-form-field>
+				<mat-select name="scholars" placeholder="Select one or more scholars" [(ngModel)]="newCourse.teacherIds.scholars" #scholars multiple>
+			    	<mat-option *ngFor="let scholar of scholarsList" [value]="scholar.id">
+			      		{{scholar.firstname}} {{scholar.lastname}}
+			    	</mat-option>
+			  	</mat-select>
+		  	</mat-form-field>
+		  	<mat-form-field>
+				<mat-select name="faculties" placeholder="Select one or more faculties" [(ngModel)]="newCourse.teacherIds.faculties" #faculties multiple>
+			    	<mat-option *ngFor="let faculty of facultyList" [value]="faculty.id">
+			      		{{faculty.firstname}} {{faculty.lastname}}
+			    	</mat-option>
+			  	</mat-select>
+		  	</mat-form-field>
+	  	</div>
+	  	
+	  	<mat-expansion-panel class="add-scholar">
+	  		<mat-expansion-panel-header>
+	  			<mat-panel-title>
+	  				Or add a new scholar
+	  			</mat-panel-title>
+	  		</mat-expansion-panel-header>
+	  		<div class="add-schedule">
+				<mat-form-field>
+		    		<input matInput value="newScholar.firstname"  placeholder="Insert first name" type="text" name="scholarfname" [(ngModel)]="newScholar.firstname" #scholarfname="ngModel"/>
+				</mat-form-field>
+				<mat-form-field>
+		    		<input matInput value="newScholar.lastname"  placeholder="Insert last name" type="text" name="scholarlname" [(ngModel)]="newScholar.lastname" #scholarlname="ngModel" />
+				</mat-form-field>
+				<mat-form-field>
+		    		<input matInput value="newScholar.username"  placeholder="Insert username" type="text" name="scholaruser" [(ngModel)]="newScholar.username" #scholaruser="ngModel" />
+				</mat-form-field>
+				<mat-form-field>
+		    		<input matInput value="newScholar.password"  placeholder="Insert password" type="text" name="scholarpass" [(ngModel)]="newScholar.password" #scholarpass="ngModel" />
+				</mat-form-field>
+				<br>
+			</div>
+			<button mat-raised-button type="button" (click)="addScholar()" 
+			[disabled]="(!newScholar.firstname || newScholar.firstname == '') || (!newScholar.lastname || newScholar.lastname == '')
+			|| (!newScholar.username || newScholar.username == '') || (!newScholar.password || newScholar.password == '')"
+			>Add scholar</button>
+	  	</mat-expansion-panel>
+		
+		<mat-expansion-panel>
+ 			<mat-expansion-panel-header>
+ 				<mat-panel-title>
+					Add a schedule
+				</mat-panel-title>
+			</mat-expansion-panel-header>
+		
+			<app-schedule-list (removingSchedule)="removeSchedule($event)" [schedules]="newCourse.schedules"></app-schedule-list>	
+			<div class="add-schedule">
+				<mat-form-field>
+		    		<input matInput value="newSchedule.day"  placeholder="Insert day" type="text" name="scheduleday" [(ngModel)]="newSchedule.day" #scheduleday="ngModel"/>
+				</mat-form-field>
+				<mat-form-field>
+		    		<input matInput value="newSchedule.beginTime"  placeholder="Insert begin time" type="text" name="schedulebegintime" [(ngModel)]="newSchedule.beginTime" #schedulebegintime="ngModel" />
+				</mat-form-field>
+				<mat-form-field>
+		    		<input matInput value="newSchedule.endTime"  placeholder="Insert end time" type="text" name="scheduleendtime" [(ngModel)]="newSchedule.endTime" #scheduleendtime="ngModel" />
+				</mat-form-field>
+				<mat-form-field>
+		    		<input matInput value="newSchedule.Location"  placeholder="Insert location" type="text" name="schedulelocation" [(ngModel)]="newSchedule.location" #schedulelocation="ngModel" />
+				</mat-form-field>
+				<br>
+			</div>
+			<button mat-raised-button type="button" (click)="addSchedule()" 
+			[disabled]="(!newSchedule.day || newSchedule.day == '') || (!newSchedule.beginTime || newSchedule.beginTime == '')
+			|| (!newSchedule.endTime || newSchedule.endTime == '') || (!newSchedule.location || newSchedule.location == '')"
+			>Add schedule</button>
+		</mat-expansion-panel>
+	</div>
+	
+	<div class="form-group" style="margin-top: 50px;">
+		<button mat-raised-button color="primary" [disabled]="loading">Add</button>
+		<img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+	</div>
+</form>

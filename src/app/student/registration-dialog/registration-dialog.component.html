@@ -1,0 +1,9 @@
+<h1 mat-dialog-title class="grey">{{course.title}}</h1>
+<div mat-dialog-content>
+	<p>Abstract:</p>
+	<p>{{course.abstract}}</p>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="createRegistration()" >Sign In</button>
+  <button mat-button cdkFocusInitial (click)="closeDialog()">Close</button>
+</div>

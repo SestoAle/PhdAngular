@@ -1,10 +1,18 @@
 import { Faculty } from './faculty';
+import { Scholar } from './scholar';
 
 export class Student {
   id: number;
-  facultyId = -1;
+  facultyId = [];
   firstname: string;
   lastname: string;
   webpage: string;
-  faculty: Faculty;
+  email: string;
+  faculties: Faculty[];
+  externalAdvisor: Scholar = new Scholar();
+  role = 'student';
+  username: string;
+  password: string;
+  cycleOfPhdId: number;
+  phdProgramId: number;
 }

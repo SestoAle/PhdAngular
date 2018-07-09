@@ -3,76 +3,368 @@
     {
       "name": "Machine Learning",
       "id": 1
+    },
+    {
+      "name": "Smart Computing",
+      "id": 2
     }
   ],
   "cycleOfPhds": [
     {
-      "num": "XXIII",
-      "durationInYears": 3,
       "phdProgramId": "1",
-      "id": 1
+      "id": 35,
+      "durationInYears": 3,
+      "num": "XXXV"
     },
     {
-      "num": "XXIV",
-      "durationInYears": 3,
       "phdProgramId": "1",
-      "id": 2
+      "id": 36,
+      "durationInYears": 3,
+      "num": "XXXVI"
     },
     {
-      "num": "XXV",
-      "durationInYears": 3,
       "phdProgramId": "1",
-      "id": 3
+      "id": 37,
+      "durationInYears": 3,
+      "num": "XXXVII"
     }
   ],
   "faculties": [
     {
+      "role": "faculty",
+      "phdProgramId": "1",
+      "cycleOfPhdId": "35",
       "firstname": "Paolo",
       "lastname": "Frasconi",
-      "webpage": "www.paolofrasconi.it",
-      "cycleOfPhdId": "1",
+      "username": "paolo",
+      "password": "frasconi",
+      "webpage": "www.paolo",
+      "email": "paolo.frasconi@unifi.it",
       "id": 1
     },
     {
+      "role": "faculty",
+      "phdProgramId": "1",
+      "cycleOfPhdId": "35",
       "firstname": "Pietro",
       "lastname": "Pala",
-      "webpage": "www.pietropala.it",
-      "cycleOfPhdId": "1",
+      "username": "pietro",
+      "password": "pietro",
+      "webpage": "www.pietro.it",
+      "email": "pietro.pala@unifi.it",
       "id": 2
+    },
+    {
+      "role": "faculty",
+      "phdProgramId": "1",
+      "cycleOfPhdId": "36",
+      "firstname": "Paolo",
+      "lastname": "Frasconi",
+      "username": "paolo",
+      "password": "frasconi",
+      "webpage": "www.paolo",
+      "email": "paolo.frasconi@unifi.it",
+      "id": 3
+    },
+    {
+      "role": "faculty",
+      "phdProgramId": "1",
+      "cycleOfPhdId": "36",
+      "firstname": "Pietro",
+      "lastname": "Pala",
+      "username": "pietro",
+      "password": "pietro",
+      "webpage": "www.pietro.it",
+      "email": "pietro.pala@unifi.it",
+      "id": 4
     }
   ],
   "students": [
     {
+      "facultyId": [
+        1
+      ],
+      "externalAdvisor": {
+        "role": "scholar",
+        "firstname": "Keanu",
+        "lastname": "Reeves",
+        "webpage": "www.sito.it"
+      },
+      "role": "student",
+      "phdProgramId": "1",
+      "cycleOfPhdId": "35",
       "firstname": "Alessandro",
       "lastname": "Sestini",
-      "webpage": "wwww.alessandrosestini.it",
-      "facultyId": 2,
-      "cycleOfPhdId": "1",
+      "username": "alessandro",
+      "password": "alessandro",
+      "webpage": "www.alessandro.it",
+      "email": "alessandrosesitni92@gmail.com",
       "id": 1
     },
     {
+      "facultyId": [
+        1
+      ],
+      "externalAdvisor": {
+        "role": "scholar",
+        "firstname": "Keanu",
+        "lastname": "Reeves"
+      },
+      "role": "student",
+      "phdProgramId": "1",
+      "cycleOfPhdId": "35",
       "firstname": "Francesco",
       "lastname": "Lombardi",
-      "webpage": "www.francescolombardi.it",
-      "facultyId": 2,
-      "cycleOfPhdId": "1",
+      "username": "francesco",
+      "password": "francesco",
+      "webpage": "www.sito.it",
+      "email": "francescolombardi94@gmail.com",
       "id": 2
+    }
+  ],
+  "courses": [
+    {
+      "title": "GPU programming basics",
+      "abstract": "GPU architecture. Comparison w.r.t CPU architecture. SIMT. What is CUDA. Hello World in CUDA. CUDA Memory organization: introduction. Threads organization and setup. Exercises. Grids, blocks and threads. Thread scheduling. Threads and divergence. Good practices in blocks and threads organization. 2D CUDA kernels. 3D CUDA kernels. CUDA memory hierarchy. Shared, device and constant memory. Efficient CUDA programming. Tiling: introduction. Tiling: how to. Synchronization barriersd. Phase-based processing. Border checking. Performance considerations. DRAM burst. Memory coalescing. Atomic instructions. Privatization. Exercises: Histogram computation. 1D convolution. How to use constant memory.. Tiling 2D convolution. Tiling. Tiling performance evaluation. CUDA parallel patterns: Convolution/Stencil. Reduction. Scan. Lab activity: 2D convolution for image filtering. Handling 2D borders. Using constant memory for convolution weights. Conditions for tiling and computation.",
+      "site": "www.sito.it",
+      "duration": 6,
+      "cfu": 3,
+      "phdProgramId": "1",
+      "id": 1,
+      "teacherIds": {
+        "scholars": [
+          2,
+          7
+        ],
+        "faculties": [
+          2
+        ]
+      },
+      "schedules": [
+        {
+          "day": "asdas",
+          "beginTime": "asdasd",
+          "endTime": "asdasd",
+          "location": "asdasd"
+        },
+        {
+          "day": "asd",
+          "beginTime": "asd",
+          "endTime": "asd",
+          "location": "asd"
+        }
+      ],
+      "materials": [],
+      "year": 2018
     },
     {
+      "schedules": [
+        {
+          "day": "23 Feb",
+          "beginTime": "12:00",
+          "endTime": "13:00",
+          "location": "Morgagni"
+        },
+        {
+          "day": "25 Feb",
+          "beginTime": "12:00",
+          "endTime": "13:00",
+          "location": "Morgagni"
+        }
+      ],
+      "teacherIds": {
+        "scholars": [
+          7
+        ],
+        "faculties": []
+      },
+      "materials": [
+        {
+          "link": null,
+          "text": "asda",
+          "date": "2018-07-08T15:18:55.142Z"
+        }
+      ],
+      "title": "Introduction to deep learning with Keras",
+      "abstract": "Neural networks foundations: MLP, creating a simple network with Keras, towards deep learning Keras installation and API Deep learning with ConvNets, DCNN layers, experimenting with basic datasets, very deep networks, Generative Adversarial Networks, GANs and images.",
+      "site": "www.sito.it",
+      "duration": 3,
+      "cfu": 3,
+      "phdProgramId": "1",
+      "id": 4,
+      "year": 2018
+    },
+    {
+      "schedules": [
+        {
+          "day": "23 June",
+          "beginTime": "12:00",
+          "endTime": "13:00",
+          "location": "Morgagni"
+        }
+      ],
+      "teacherIds": {
+        "scholars": [
+          7
+        ],
+        "faculties": []
+      },
+      "materials": [],
+      "title": "Real-time systems: 50 years of evolution",
+      "abstract": "System performance is affected by a number of uncertainties: the input data, the state of computing devices (e.g. cache content), contention over the interconnection, etc. How should the uncertainties be accounted for? After establishing a connection with other approaches (benchmarking, stochastic analysis, etc.), the \"real-time\" perspective to the management of uncertainties will be illustrated. We will review the main techniques to analyze and design real-time systems. Finally, we will illustrate what the real-time research can offer to the recent challenges in cloud computing, IoT and cyber-physical systems.",
+      "site": "www.sito.it",
+      "duration": 3,
+      "cfu": 3,
+      "phdProgramId": "1",
+      "id": 5,
+      "year": 2018
+    },
+    {
+      "schedules": [
+        {
+          "day": "22 feb",
+          "beginTime": "12:00",
+          "endTime": "13:00",
+          "location": "Morgagni"
+        }
+      ],
+      "teacherIds": {
+        "scholars": [
+          2
+        ],
+        "faculties": []
+      },
+      "materials": [
+        {
+          "link": "Image and Video Analysis - Relazione.pdf",
+          "text": "Il giorno 22 febbraio ci sarà lezione. Scaricate il file qui sotto",
+          "date": "2018-07-09T09:07:17.354Z"
+        }
+      ],
+      "title": "Stochastic Model Checking ",
+      "abstract": "The course introduces the use of formal methods for the specification and verification of quantitative properties of concurrent distributed systems. In particular we look at the foundations of such techniques among which various kinds of Markov chains and related probabilistic and stochastic process algebras for the modelling of systems, and to probabilistic and stochastic temporal logics for the specification of properties. Furthermore, the basic probabilistic and stochastic model-checking algorithms will be illustrated. Hands-on experience will be provided by performing smaller case studies in modelling and verification using the state-of-the-art PRISM model checker. Some lectures will be dedicated to illustrate more advanced recent developments and perspectives for future research in this field in particular in relation to the modelling and verification of smart and collective systems.",
+      "site": "www.sito",
+      "duration": 3,
+      "cfu": 3,
+      "phdProgramId": "1",
+      "id": 6,
+      "year": 2018
+    }
+  ],
+  "scholars": [
+    {
+      "id": 5,
+      "firstname": "Marco",
+      "lastname": "Bertini",
+      "webpage": "www.sito.it",
+      "phdProgramId": 1,
+      "email": "marco.bertini@unifi.it",
+      "username": "scholar",
+      "password": "scholar"
+    },
+    {
+      "id": 2,
+      "firstname": "Lorenzo",
+      "lastname": "Seidenari",
+      "webpage": "www.sito.it",
+      "phdProgramId": 1
+    },
+    {
+      "firstname": "Stefano",
+      "lastname": "Berretti",
+      "webpage": "www.stefano.it",
+      "phdId": 1,
+      "phdProgramId": "1",
+      "id": 7
+    },
+    {
+      "role": "scholar",
       "firstname": "Luca",
-      "lastname": "Angioloni",
-      "webpage": "www.lucaangioloni.it",
-      "facultyId": 2,
-      "cycleOfPhdId": "1",
-      "id": 3
+      "lastname": "Boncompagni",
+      "username": "luca",
+      "password": "boncompagni",
+      "phdId": 1,
+      "phdProgramId": "1",
+      "id": 10
+    }
+  ],
+  "registrations": [],
+  "registeredCourses": [
+    {
+      "title": "GPU programming basics",
+      "abstract": "GPU architecture. Comparison w.r.t CPU architecture. SIMT. What is CUDA. Hello World in CUDA. CUDA Memory organization: introduction. Threads organization and setup. Exercises. Grids, blocks and threads. Thread scheduling. Threads and divergence. Good practices in blocks and threads organization. 2D CUDA kernels. 3D CUDA kernels. CUDA memory hierarchy. Shared, device and constant memory. Efficient CUDA programming. Tiling: introduction. Tiling: how to. Synchronization barriersd. Phase-based processing. Border checking. Performance considerations. DRAM burst. Memory coalescing. Atomic instructions. Privatization. Exercises: Histogram computation. 1D convolution. How to use constant memory.. Tiling 2D convolution. Tiling. Tiling performance evaluation. CUDA parallel patterns: Convolution/Stencil. Reduction. Scan. Lab activity: 2D convolution for image filtering. Handling 2D borders. Using constant memory for convolution weights. Conditions for tiling and computation.",
+      "site": "www.sito.it",
+      "duration": 6,
+      "cfu": 3,
+      "phdProgramId": "1",
+      "id": 1,
+      "teacherIds": {
+        "scholars": [
+          2
+        ],
+        "faculties": [
+          2
+        ]
+      },
+      "schedules": [
+        {
+          "day": "Thu 16 Feb 2018",
+          "beginTime": "11:00",
+          "endTime": "12:00",
+          "location": "Morgagni"
+        },
+        {
+          "day": "Thu 18 Feb 2018",
+          "beginTime": "11:00",
+          "endTime": "12:00",
+          "location": "Morgagni"
+        },
+        {
+          "day": "Thu 20 Feb 2018",
+          "beginTime": "11:00",
+          "endTime": "12:00",
+          "location": "Morgagni"
+        },
+        {
+          "day": "Thu 22 Feb 2018",
+          "beginTime": "11:00",
+          "endTime": "12:00",
+          "location": "Santa Marta"
+        }
+      ],
+      "materials": [
+        {
+          "link": null,
+          "text": "Tomorrow there will be no lesson",
+          "date": "2018-07-07T16:28:57.537Z"
+        },
+        {
+          "link": "0_MockUp.pdf",
+          "text": "Download this file",
+          "date": "2018-07-07T16:29:11.487Z"
+        }
+      ]
     },
     {
-      "facultyId": 2,
-      "firstname": "Alessandro",
-      "lastname": "Minervini",
-      "webpage": "alessandrominervini.it",
-      "cycleOfPhdId": "1",
-      "id": 4
+      "title": "Fundamental of internet of things",
+      "abstract": "aksjlkajd\naskdjalsd\nasdnakldj\n",
+      "site": "www.sito.it",
+      "duration": 9,
+      "cfu": 3,
+      "phdProgramId": "1",
+      "id": 2,
+      "teacherIds": {
+        "scholars": [],
+        "faculties": []
+      },
+      "schedules": [],
+      "materials": [
+        {
+          "link": null,
+          "text": "Ciao ciao ale",
+          "date": "2018-07-08T10:27:10.071Z"
+        }
+      ]
     }
   ]
 }

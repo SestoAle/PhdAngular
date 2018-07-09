@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { CycleOfPhd } from '../model/cycleOfPhd';
+
+import { GeneralService } from './general.service';
 
 import { map } from 'rxjs/operators';
 import { catchError } from 'rxjs/operators';
@@ -13,35 +15,33 @@ import { catchError } from 'rxjs/operators';
 })
 export class CycleService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private general: GeneralService
+  ) { }
 
   addCycle(phdId, cycle) {
-     return this.http.post('http://localhost:3000/phdPrograms/' + phdId + '/cycleOfPhds', cycle)
-       .pipe(catchError(this.handleErrorObservable));
+     return this.http.post(`${ this.general.uri }/phdPrograms/${ phdId }/cycleOfPhds`, cycle)
+       .pipe(catchError(this.general.handleErrorObservable));
   }
 
   getCycles(phdId) {
-    return this.http.get<CycleOfPhd[]>('http://localhost:3000/phdPrograms/' + phdId + '/cycleOfPhds')
-      .pipe(catchError(this.handleErrorObservable));
+    return this.http.get<CycleOfPhd[]>(`${ this.general.uri }/phdPrograms/${ phdId }/cycleOfPhds`)
+      .pipe(catchError(this.general.handleErrorObservable));
   }
 
   deleteCycle(id) {
-    return this.http.delete('http://localhost:3000/cycleOfPhds/' + id)
-      .pipe(catchError(this.handleErrorObservable));
+    return this.http.delete(`${ this.general.uri }/cycleOfPhds/${ id }`)
+      .pipe(catchError(this.general.handleErrorObservable));
   }
 
   getCycle(id) {
-    return this.http.get<CycleOfPhd>('http://localhost:3000/cycleOfPhds/' + id)
-      .pipe(catchError(this.handleErrorObservable));
+    return this.http.get<CycleOfPhd>(`${ this.general.uri }/cycleOfPhds/${ id }`)
+      .pipe(catchError(this.general.handleErrorObservable));
   }
 
   patchCycle(id, cycle) {
-    return this.http.patch('http://localhost:3000/cycleOfPhds/' + id, cycle)
-      .pipe(catchError(this.handleErrorObservable));
-  }
-
-  handleErrorObservable (error: Response | any) {
-    console.error(error.message || error);
-    return Observable.throw(error.message || error);
+    return this.http.patch(`${ this.general.uri }/cycleOfPhds/${ id }`, cycle)
+      .pipe(catchError(this.general.handleErrorObservable));
   }
 }

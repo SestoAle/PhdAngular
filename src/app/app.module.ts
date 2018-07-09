@@ -6,25 +6,30 @@ import { AppComponent } from './app.component';
 import { BackComponent } from './back/back.component';
 import { routing } from './app.routing';
 
-//App Modules
+// App Modules
 import { LoginModule } from './login/login.module';
 import { StaffModule } from './staff/staff.module';
+import { CoordinatorModule } from './coordinator/coordinator.module';
+import { FacultyModule } from './faculty/faculty.module';
+import { StudentModule } from './student/student.module';
 
-//Helpers
+// Helpers
 import { AuthGuard } from './guards/auth.guard';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { AuthenticationService } from './services/authentication.service';
 import { HomeComponent } from './home/home.component';
 
-//Material Modules
+// Material Modules
 import { MatCardModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material';
+import { MatSidenavModule } from '@angular/material';
 
-//Browser Animations Module
+// Browser Animations Module
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-//FlexLayout
+// FlexLayout
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { RegistrationDialogComponent } from './student/registration-dialog/registration-dialog.component';
 
 @NgModule({
   declarations: [
@@ -34,10 +39,14 @@ import { FlexLayoutModule } from "@angular/flex-layout";
   imports: [
     LoginModule,
     StaffModule,
+    CoordinatorModule,
+    FacultyModule,
+    StudentModule,
     BrowserModule,
     FlexLayoutModule,
     HttpClientModule,
     MatCardModule,
+    MatSidenavModule,
     MatToolbarModule,
     BrowserAnimationsModule,
     routing

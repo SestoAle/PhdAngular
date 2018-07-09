@@ -1,0 +1,14 @@
+<h2 class="grey"><app-back></app-back>{{course.title}}</h2>
+<br>
+<h5 class="grey">CFU: {{course.cfu}}</h5>
+<br>
+<h5 class="grey">web page: <a href="course.site">{{course.site}}</a></h5>
+
+<mat-tab-group mat-stretch-tabs>
+ 	<mat-tab label="Course">
+		<app-course [course]="course"></app-course> 
+	</mat-tab>
+  	<mat-tab label="Students" *ngIf="currentUser.role != 'student'"> 
+  		<app-registration-list [registrations]="registrations"></app-registration-list> 
+	</mat-tab>
+</mat-tab-group>

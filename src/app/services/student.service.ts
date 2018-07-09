@@ -5,6 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { Student } from '../model/student';
 
+import { GeneralService } from './general.service';
+
 import { map } from 'rxjs/operators';
 import { catchError } from 'rxjs/operators';
 
@@ -14,38 +16,37 @@ import { catchError } from 'rxjs/operators';
 
 export class StudentService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private general: GeneralService
+  ) { }
 
   getStudents(phdId, cycleId) {
-    return this.http.get<Student[]>('http://localhost:3000/phdPrograms/' + phdId + '/cycleOfPhds/' + cycleId + '/students?_expand=faculty')
-      .pipe(catchError(this.handleErrorObservable));
+    return this.http.get<Student[]>(`${ this.general.uri }/phdPrograms/${ phdId }/cycleOfPhds/${ cycleId }/students?_expand=faculty`)
+      .pipe(catchError(this.general.handleErrorObservable));
   }
 
   getStudent(id) {
-    return this.http.get<Student>('http://localhost:3000/students/' + id + '?_expand=faculty')
-      .pipe(catchError(this.handleErrorObservable));
+    return this.http.get<Student>(`${ this.general.uri }/students/${ id }?_expand=faculty`)
+      .pipe(catchError(this.general.handleErrorObservable));
   }
 
   addStudent(phdId, cycleId, student) {
+    // Back-end operations
     delete student.faculty;
-    return this.http.post('http://localhost:3000/phdPrograms/' + phdId + '/cycleOfPhds/' + cycleId + '/students', student)
-      .pipe(catchError(this.handleErrorObservable));;
+    return this.http.post(`${ this.general.uri }/phdPrograms/${ phdId }/cycleOfPhds/${ cycleId }/students`, student)
+      .pipe(catchError(this.general.handleErrorObservable));
   }
 
   patchStudent(id, student) {
+    // Back-end operation
     delete student.faculty;
-    console.log(student);
-    return this.http.patch('http://localhost:3000/students/' + id, student)
-      .pipe(catchError(this.handleErrorObservable));
+    return this.http.patch(`${ this.general.uri }/students/${ id }`, student)
+      .pipe(catchError(this.general.handleErrorObservable));
   }
 
   deleteStudent(id) {
-    return this.http.delete('http://localhost:3000/' + id)
-      .pipe(catchError(this.handleErrorObservable));
-  }
-
-  handleErrorObservable (error: Response | any) {
-    console.error(error.message || error);
-    return Observable.throw(error.message || error);
+    return this.http.delete(`${ this.general.uri }/students/${ id }`)
+      .pipe(catchError(this.general.handleErrorObservable));
   }
 }

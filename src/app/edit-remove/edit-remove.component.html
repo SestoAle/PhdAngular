@@ -1,5 +1,5 @@
-<a *ngIf="removingId != model.id" class="small grey edit-text" (click) = "goToEdit()">Edit</a>
-<a *ngIf="removingId != model.id" class="small grey edit-text" (click) = "removingModel($event, model.id)">Remove</a>
+<a *ngIf="removingId != model.id" class="small grey edit-text edit" (click) = "goToEdit()">Edit</a>
+<a *ngIf="removingId != model.id" class="small grey edit-text remove" (click) = "removingModel($event, model.id)">Remove</a>
 
 <div *ngIf="removingId == model.id" class="small">
 	<p class="edit-remove">Remove this element?</p>

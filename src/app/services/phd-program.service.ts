@@ -5,6 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { PhdProgram } from '../model/phdProgram';
 
+import { GeneralService } from './general.service';
+
 import { map } from 'rxjs/operators';
 import { catchError } from 'rxjs/operators';
 
@@ -14,30 +16,33 @@ import { catchError } from 'rxjs/operators';
 
 export class PhdProgramService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private general: GeneralService
+  ) { }
 
   getPhdPrograms() {
-    return this.http.get<PhdProgram[]>('http://localhost:3000/phdPrograms').pipe(catchError(this.handleErrorObservable));;
+    return this.http.get<PhdProgram[]>(`${ this.general.uri }/phdPrograms`)
+      .pipe(catchError(this.general.handleErrorObservable));
   }
 
   addPhd(phd) {
-    return this.http.post('http://localhost:3000/phdPrograms', phd).pipe(catchError(this.handleErrorObservable));
+    return this.http.post(`${ this.general.uri }/phdPrograms`, phd)
+      .pipe(catchError(this.general.handleErrorObservable));
   }
 
   getPhd(id) {
-    return this.http.get<PhdProgram>('http://localhost:3000/phdPrograms/' + id).pipe(catchError(this.handleErrorObservable));;
+    return this.http.get<PhdProgram>(`${ this.general.uri }/phdPrograms/${ id }`)
+      .pipe(catchError(this.general.handleErrorObservable));
   }
 
   deletePhd(id) {
-    return this.http.delete('http://localhost:3000/phdPrograms/' + id).pipe(catchError(this.handleErrorObservable));;
+    return this.http.delete(`${ this.general.uri }/phdPrograms/${ id }`)
+      .pipe(catchError(this.general.handleErrorObservable));
   }
 
   patchPhd(id, changes) {
-    return this.http.patch('http://localhost:3000/phdPrograms/' + id, changes).pipe(catchError(this.handleErrorObservable));
-  }
-
-  handleErrorObservable (error: Response | any) {
-    console.error(error.message || error);
-    return Observable.throw(error.message || error);
+    return this.http.patch(`${ this.general.uri }/phdPrograms/${ id }`, changes)
+      .pipe(catchError(this.general.handleErrorObservable));
   }
 }

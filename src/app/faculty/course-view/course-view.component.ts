@@ -1,0 +1,45 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { CourseService } from '../../services/course.service';
+import { RegistrationService } from '../../services/registration.service';
+
+import { Course } from '../../model/course';
+import { Registration } from '../../model/registration';
+import { Material } from '../../model/material';
+
+@Component({
+  selector: 'app-course-view',
+  templateUrl: './course-view.component.html',
+  styleUrls: ['./course-view.component.css']
+})
+export class CourseViewComponent implements OnInit {
+
+  toolbarTitle = 'Courses';
+  currentUser;
+  courseId;
+  course: Course = new Course();
+  registrations: Registration[] = null;
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private courseService: CourseService,
+    private registrationService: RegistrationService) { }
+
+  ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.courseId = this.route.snapshot.paramMap.get('id');
+
+    this.courseService.getCourse(this.courseId).subscribe(
+      result => { this.course = result; },
+      error => { console.log(error); }
+    );
+
+    this.registrationService.getRegistrations(this.courseId).subscribe(
+      result => { this.registrations = result; },
+      error => { console.log(error); }
+    );
+  }
+}

@@ -24,10 +24,10 @@ export class StudentListComponent implements OnInit {
   ngOnInit() {
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges (changes: SimpleChanges) {
     if (this.phd.id && this.cycle.id) {
       this.studentService.getStudents(this.phd.id, this.cycle.id).subscribe(
-        result => {this.students = result; },
+        result => {this.students = result; console.log(this.students)},
         error => { console.log(error); }
     );
     }

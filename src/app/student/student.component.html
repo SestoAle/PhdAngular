@@ -1,0 +1,6 @@
+<h2 class="grey">{{student.firstname}} {{student.lastname}}</h2>
+<mat-tab-group mat-stretch-tabs>
+	<mat-tab label="Registrations"><app-student-registration-list [registrations]="registrations" (removingRegistration)="ngOnInit()"></app-student-registration-list></mat-tab>
+	<mat-tab label="My CFU"> <app-cfu-list [registrations]="registrations" [totalCfu]="totalCfu"></app-cfu-list></mat-tab>
+	<mat-tab label="All courses"> <app-course-list [courses]="allCourses" [student]="student" (courseClick)="openDialog($event, course)"></app-course-list></mat-tab>
+</mat-tab-group>

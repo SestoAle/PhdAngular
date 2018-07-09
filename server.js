@@ -39,9 +39,9 @@ server.post('/auth/login', (req, res) => {
     return
   }
   index = {"role":"2"};
-  const access_token = createToken({username, password})
-  const role = userdb.users.find(user => user.username === username && user.password === password).role;
-  res.status(200).json({access_token, role})
+  const token = createToken({username, password})
+  const user = userdb.users.find(user => user.username === username && user.password === password);
+  res.status(200).json({token, user})
 });
 
 server.use(/^(?!\/auth).*$/,  (req, res, next) => {
@@ -67,6 +67,8 @@ server.use(jsonServer.rewriter({
   "/phdPrograms/:phdProgramId/cycleOfPhds/:cycleOfPhdId/students": "/cycleOfPhds/:cycleOfPhdId/students",
   "/phdPrograms/:phdProgramId/cycleOfPhds/:cycleOfPhdId/students?_expand=faculty": "/cycleOfPhds/:cycleOfPhdId/students?_expand=faculty",
   "/phdPrograms/:phdProgramId/cycleOfPhds/:cycleOfPhdId/students/:studentId" : "/student/:studentId",
+  "/faculties/:facultyId/courses" : "/phdPrograms/1/courses",
+  "/faculties/:facultyId/courses/:courseId" : "/registeredCourses/:courseId"
 }));
 
 server.use(router);

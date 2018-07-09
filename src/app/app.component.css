@@ -2,10 +2,11 @@
 
 .container {
 	margin-top: 5%;
+	margin-bottom: 5%
 }
 
 .toolbar-fill-space {
-  flex: 1 1 auto;
+ 	flex: 1 1 auto;
 }
 
 .items .back {
@@ -14,4 +15,14 @@
 
 .app-back {
 	cursor:pointer;
+}
+
+.my-page {
+	color: white; 
+	cursor: pointer; 
+	margin-right: 10px;
+}
+
+a.my-page:hover {
+	text-decoration: underline;
 }

@@ -1,12 +1,57 @@
 {
 	"users": [
 	{
-		"id": 1,
-		"username": "test",
-		"password": "test",
-		"firstName": "Test",
+		"id": 6,
+		"username": "staff",
+		"password": "staff",
+		"firstName": "Staff",
 		"lastName": "User",
 		"role": "staff"
-	}
+	}, 
+	{	
+		"username": "coord",
+		"password": "coord",
+		"role": "coordinator",
+		"phdProgramId": "1",
+      	"cycleOfPhdId": "1",
+      	"firstname": "Paolo",
+      	"lastname": "Frasconi",
+      	"webpage": "www.paolo.it",
+      	"id": 1
+	},
+	{	
+		"username": "faculty",
+		"password": "faculty",
+		"role": "faculty",
+		"phdProgramId": "1",
+      	"cycleOfPhdId": "1",
+      	"firstname": "Pietro",
+      	"lastname": "Pala",
+      	"webpage": "www.Pietro.it",
+      	"id": 2
+	},
+	{
+		"id": 5,
+		"firstname": "Marco",
+		"lastname": "Bertini",
+		"webpage": "www.sito.it",
+		"phdProgramId": 1,
+		"username": "scholar",
+		"password": "scholar",
+		"role": "scholar"
+    },
+    {
+      "facultyId": 1,
+      "phdProgramId": "1",
+      "cycleOfPhdId": "1",
+      "firstname": "Alessandro",
+      "lastname": "Sestini",
+      "username": "student",
+      "password": "student",
+      "webpage": "www.alessandrosestini.it",
+      "email": "alessandrosestini92@gmail.com",
+      "role": "student",
+      "id": 9
+    }
 	]
 }

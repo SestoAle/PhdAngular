@@ -4,7 +4,10 @@ import { PhdProgram } from '../../model/phdProgram';
 import { CycleOfPhd } from '../../model/cycleOfPhd';
 import { Faculty } from '../../model/faculty';
 
+import { map } from 'rxjs/operators';
+
 import { FacultyService } from '../../services/faculty.service';
+import { CycleService } from '../../services/cycle.service';
 
 @Component({
   selector: 'app-faculty-list',
@@ -18,12 +21,15 @@ export class FacultyListComponent implements OnInit, OnChanges {
 
   faculties: Faculty[];
 
-  constructor(private facultyService: FacultyService) { }
+  constructor(
+    private facultyService: FacultyService,
+    private cycleService: CycleService
+  ) { }
 
   ngOnInit() {
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges() {
     if (this.phd.id && this.cycle.id) {
       this.facultyService.getFaculties(this.phd.id, this.cycle.id).subscribe(
         result => {this.faculties = result; },
@@ -41,5 +47,13 @@ export class FacultyListComponent implements OnInit, OnChanges {
          ));
   }
 
-
+  importFaculty() {
+    this.facultyService.getFaculties(this.phd.id, (this.cycle.id - 1))
+      .pipe(map(
+        faculties => faculties
+          .forEach(faculty => {faculty.id = null; this.facultyService.addFaculty(this.phd.id, this.cycle.id, faculty).subscribe(); })))
+      .subscribe(
+        result => this.ngOnChanges()
+      );
+  }
 }

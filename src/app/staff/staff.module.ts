@@ -11,6 +11,7 @@ import { FacultyListComponent } from './faculty-list/faculty-list.component';
 import { EditRemoveComponent } from '../edit-remove/edit-remove.component';
 import { AddMemberComponent } from './add-member/add-member.component';
 import { StudentListComponent } from './student-list/student-list.component';
+import { ScheduleListComponent } from '../schedule-list/schedule-list.component';
 
 import { FormsModule } from '@angular/forms';
 import { FormControl } from '@angular/forms';
@@ -29,9 +30,16 @@ import { MatChipsModule } from '@angular/material';
 import { MatTabsModule } from '@angular/material';
 import { MatRadioModule } from '@angular/material';
 import { MatSelectModule } from '@angular/material';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTableModule } from '@angular/material';
+import { MatSidenavModule } from '@angular/material';
+
 
 //Routes
 import { StaffRoutingModule } from './staff-routing.module';
+import { CourseListComponent } from './course-list/course-list.component';
+import { CycleListComponent } from './cycle-list/cycle-list.component';
+import { AddCourseComponent } from './add-course/add-course.component';
 
 @NgModule({
   imports: [
@@ -45,6 +53,9 @@ import { StaffRoutingModule } from './staff-routing.module';
     MatTabsModule,
     MatRadioModule,
     MatSelectModule,
+    MatExpansionModule,
+    MatSidenavModule,
+    MatTableModule,
     FormsModule,
     StaffRoutingModule,
   ],
@@ -58,11 +69,21 @@ import { StaffRoutingModule } from './staff-routing.module';
     BackComponent,
     EditRemoveComponent,
     AddMemberComponent,
-    StudentListComponent
+    StudentListComponent,
+    CourseListComponent,
+    CycleListComponent,
+    ScheduleListComponent,
+    AddCourseComponent
   ],
   providers: [
     PhdProgramService,
     CycleService
+  ],
+  exports: [
+    CourseListComponent,
+    ScheduleListComponent,
+    EditRemoveComponent,
+    BackComponent
   ]
 })
 export class StaffModule { }

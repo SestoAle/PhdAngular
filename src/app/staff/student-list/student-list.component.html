@@ -2,7 +2,9 @@
     <mat-list-item [routerLink]="['/add-member', phd.id, cycle.id, 'student', student.id]" *ngFor="let student of students">
 	    <mat-icon matListIcon>account_box</mat-icon>
 	    <a matLine> {{student.firstname}} {{student.lastname}} </a>
-	    <p class="grey" matLine> Advisor: {{student.faculty.firstname}} {{student.faculty.lastname}}</p>
+	    <p class="grey" matLine> Advisor: <span *ngFor="let faculty of student.faculties">{{faculty.firstname}} {{faculty.lastname}} </span></p>
+	    <p class="grey" matLine> External Advisor:
+	    	{{student.externalAdvisor.firstname}} {{student.externalAdvisor.lastname}}</p>
 	    <p class="grey" matLine> {{student.webpage}} </p>
 		
 	    <app-edit-remove [model]="student" [edit_link]="['/add-member', phd.id, cycle.id, 'student', student.id]" (cancelModel)="removeStudent($event, student.id)"></app-edit-remove>

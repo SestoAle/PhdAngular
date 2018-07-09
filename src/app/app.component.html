@@ -1,15 +1,14 @@
 <mat-toolbar color="primary"> <span>PhdApp</span> 
 	<span class="toolbar-fill-space"></span> 
+	<span><a [hidden]="!checkIfLogged() || checkIfLogged() === 'staff'" class="my-page" (click) = "updatePage()">MyPage</a></span>
 	<span><a [hidden]="!isLogged" [routerLink]="['/login']" style="color: white">Logout</a></span>
 </mat-toolbar>
 <div class="login-container container" 
 	fxLayout = "column"
     fxLayoutAlign="center center"
     fxFlexAlign="center center">
-    
     <mat-toolbar color="primary" class="col-md-6 col-lg-6"><h1>{{toolbarTitle}}</h1></mat-toolbar>
 	<mat-card class="col-md-6 col-lg-6">
-    	<router-outlet (activate) = 'updateToolbar($event)'></router-outlet>
+    	<router-outlet (activate) = 'updateToolbar($event);'></router-outlet>
    	</mat-card>
-   	
 </div>

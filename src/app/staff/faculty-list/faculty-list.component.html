@@ -1,3 +1,9 @@
+<div class="grey" style="text-align: right">
+		<a mat-button (click)="importFaculty()">
+			<mat-icon>add</mat-icon>
+			<span>Import from previous cycle</span>
+		</a>
+	</div>
 <mat-nav-list>
     <mat-list-item [routerLink]="['/add-member', phd.id, cycle.id, 'faculty', faculty.id]" *ngFor="let faculty of faculties">
 	    <mat-icon matListIcon>account_box</mat-icon>

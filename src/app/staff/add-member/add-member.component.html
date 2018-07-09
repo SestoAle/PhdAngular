@@ -2,11 +2,13 @@
 	<app-back></app-back><span>Back</span>
 </div>
 <form name="form" (ngSubmit)="f.form.valid && addMember()" #f="ngForm" novalidate>
-    <div class="form-group center-block" [ngClass]="{ 'has-error': f.submitted && !memberfname.valid && !memberlname.valid && !memberweb.valid}">
-
-		<mat-radio-group class="grey small" [(ngModel)]="memberClass" [disabled] = "update" name="radio">
+    <div class="form-group center-block" 
+		[ngClass]="{ 'has-error': f.submitted && !memberfname.valid && !memberlname.valid && !memberweb.valid && !membermail.valid && !memberusername.valid && !memberpassword.valid}"
+	>
+		<mat-radio-group class="grey small" [(ngModel)]="memberClass" [disabled] = "update" name="radio" (change)="createMember()">
 		  <mat-radio-button class="radio" value="student" name="radioStudent">Student</mat-radio-button>
 		  <mat-radio-button class="radio" value="faculty" name="radioFaculty">Faculty</mat-radio-button>
+		  <mat-radio-button class="radio" value="scholar" name="radioScholar">Scholar</mat-radio-button>
 		</mat-radio-group>
 	
 	<!-- <h4 class ="grey">PhD {{phd.name}}</h4> -->
@@ -19,10 +21,24 @@
 		</mat-error>
 		
 		<mat-form-field class="full-width" >
-	    	<input matInput value="newMember.lastname"  placeholder="Insert last name" type="text" name="memberlname" [(ngModel)]="newMember.lastname" #memberlname="ngModel" required />
+	    	<input matInput value="newMember.lastname"  placeholder="Insert last name" type="text" name="memberlname" [(ngModel)]="newMember.lastname" #memberusername="ngModel" required />
 		</mat-form-field>
 		<mat-error *ngIf="f.submitted && !memberlname.valid">
 			The last name is required!
+		</mat-error>
+		
+		<mat-form-field class="full-width" >
+	    	<input matInput value="newMember.username"  placeholder="Insert username" type="text" name="memberusername" [(ngModel)]="newMember.username" #memberpassword="ngModel" required />
+		</mat-form-field>
+		<mat-error *ngIf="f.submitted && !memberusername.valid">
+			The username is required!
+		</mat-error>
+		
+		<mat-form-field class="full-width" >
+	    	<input matInput value="newMember.password"  placeholder="Insert password" type="text" name="memberpassword" [(ngModel)]="newMember.password" #memberlname="ngModel" required />
+		</mat-form-field>
+		<mat-error *ngIf="f.submitted && !memberpassword.valid">
+			The password is required!
 		</mat-error>
 		
 		<mat-form-field class="full-width" >
@@ -32,8 +48,15 @@
 			The webpage is required!
 		</mat-error>
 		
-		<mat-form-field *ngIf="memberClass == 'student'">
-			<mat-select name="advisor" placeholder="Select an Advisor" [(ngModel)]="newMember.facultyId" #advisor required>
+		<mat-form-field class="full-width" >
+	    	<input matInput value="newMember.email"  placeholder="Insert e-mail address" type="email" name="memebrmail" [(ngModel)]="newMember.email" #membermail="ngModel" required />
+		</mat-form-field>
+		<mat-error *ngIf="f.submitted && !membermail.valid">
+			The e-mail is required!
+		</mat-error>
+		
+		<mat-form-field [hidden]="currentUser.role === 'student'" *ngIf="memberClass == 'student'" class="full-width">
+			<mat-select name="advisor" placeholder="Select one or more Advisor" [(ngModel)]="newMember.facultyId" #advisor multiple required>
 		    	<mat-option *ngFor="let faculty of faculties" [value]="faculty.id">
 		      		{{faculty.firstname}} {{faculty.lastname}}
 		    	</mat-option>
@@ -42,6 +65,20 @@
 	  	<mat-error *ngIf="f.submitted && memberClass == 'student' && newMember.facultyId < 0">
 			The advisor is required!
 		</mat-error>
+		
+		<fieldset class="externalAdvisor" [hidden]="currentUser.role === 'student'" *ngIf="newMember.externalAdvisor && memberClass == 'student'">
+			<mat-form-field class="full-width">
+		    	<input matInput value="newMember.externalAdvisor.firstname"  placeholder="Insert external advisor first name" type="text" name="memberextfname" [(ngModel)]="newMember.externalAdvisor.firstname" #memberextfname="ngModel"/>
+			</mat-form-field>
+			
+			<mat-form-field class="full-width">
+		    	<input matInput value="newMember.externalAdvisor.lastname"  placeholder="Insert external advisor last name" type="text" name="memebrextlname" [(ngModel)]="newMember.externalAdvisor.lastname" #memberextlname="ngModel"/>
+			</mat-form-field>
+			
+			<mat-form-field class="full-width">
+		    	<input matInput value="newMember.externalAdvisor.webpage"  placeholder="Insert external advisor web page" type="text" name="memebrextweb" [(ngModel)]="newMember.externalAdvisor.webpage" #memberextweb="ngModel"/>
+			</mat-form-field>
+		</fieldset>
 	</div>
 	
 	<div class="form-group" style="margin-top: 50px;">
