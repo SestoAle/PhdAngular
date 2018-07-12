@@ -67,8 +67,11 @@ server.use(jsonServer.rewriter({
   "/phdPrograms/:phdProgramId/cycleOfPhds/:cycleOfPhdId/students": "/cycleOfPhds/:cycleOfPhdId/students",
   "/phdPrograms/:phdProgramId/cycleOfPhds/:cycleOfPhdId/students?_expand=faculty": "/cycleOfPhds/:cycleOfPhdId/students?_expand=faculty",
   "/phdPrograms/:phdProgramId/cycleOfPhds/:cycleOfPhdId/students/:studentId" : "/student/:studentId",
-  "/faculties/:facultyId/courses" : "/phdPrograms/1/courses",
-  "/faculties/:facultyId/courses/:courseId" : "/registeredCourses/:courseId"
+  "/faculties/:facultyId/courses" : "/courses?teacherIds.faculties_like=:facultyId",
+  "/scholars/:scholarId/courses" : "/courses?teacherIds.scholars_like=:scholarId",
+  "/faculties/:facultyId/courses/:courseId" : "/courses/:courseId",
+  "/faculties/:facultyId/students?_embed=events&_embed=reports" : "/students?facultyId_like=:facultyId&_embed=events&_embed=reports",
+  "/faculties/:facultyId/students/:studentId" : "/students/:studentId"
 }));
 
 server.use(router);

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { BackComponent } from './back/back.component';
+import { BackComponent } from './utility-module/back/back.component';
 import { routing } from './app.routing';
 
 // App Modules
@@ -29,7 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // FlexLayout
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { RegistrationDialogComponent } from './student/registration-dialog/registration-dialog.component';
+import { RegistrationDialogComponent } from './utility-module/registration-dialog/registration-dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -62,6 +63,6 @@ import { RegistrationDialogComponent } from './student/registration-dialog/regis
   ],
   exports: [
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent ]
 })
 export class AppModule { }

@@ -51,7 +51,27 @@
       "webpage": "www.alessandrosestini.it",
       "email": "alessandrosestini92@gmail.com",
       "role": "student",
-      "id": 9
+      "id": 1
+    },
+    {
+      "facultyId": [
+        1
+      ],
+      "externalAdvisor": {
+        "role": "scholar",
+        "firstname": "Keanu",
+        "lastname": "Reeves"
+      },
+      "role": "student",
+      "phdProgramId": "1",
+      "cycleOfPhdId": "35",
+      "firstname": "Francesco",
+      "lastname": "Lombardi",
+      "username": "francesco",
+      "password": "francesco",
+      "webpage": "www.sito.it",
+      "email": "francescolombardi94@gmail.com",
+      "id": 2
     }
 	]
 }

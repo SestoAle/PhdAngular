@@ -10,7 +10,7 @@
 			<span>Add Cycle</span>
 		</a>
 	</div>
-    <app-cycle-list [phd]="phd" (removingCycle)="ngOnInit()"></app-cycle-list>
+    <app-cycle-list [phd]="phd" [cycles]="cycles" (removingCycle)="ngOnInit()"></app-cycle-list>
   </mat-tab>
   <mat-tab label="Courses">
   	<div class="grey" style="text-align: right">

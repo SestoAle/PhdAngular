@@ -1,9 +1,0 @@
-<h5 class="grey" style="margin:20px">Total CFU: {{totalCfu}}</h5>
-<mat-list>
-	<mat-list-item *ngFor="let registration of registrations">
-		<mat-icon *ngIf="!registration.grade" matListIcon>remove_circle_outline</mat-icon>
-		<mat-icon *ngIf="registration.grade" matListIcon>check_circle_outline</mat-icon>
-		<p matLine>{{registration.course.title}}: {{registration.course.cfu}} CFU</p>
-		<p matLine *ngIf="registration.grade">Grade: {{registration.grade}}/30</p>
-	</mat-list-item>
-</mat-list>

@@ -8,7 +8,9 @@
 	</div>
 	<app-course-list [phd]="phd" [courses]="allCourses" (removingCourse)="ngOnInit()" (courseClick)="modifyCourse($event)"></app-course-list>
   </mat-tab>
-  <mat-tab label="Registered courses"> <app-course-list [faculty]="coordinator" [courses]="registeredCourses" (courseClick)="openCourse($event)"></app-course-list> </mat-tab>
+  <mat-tab label="My courses"> <app-course-list [faculty]="coordinator" [courses]="registeredCourses" (courseClick)="openCourse($event)"></app-course-list> </mat-tab>
+  <mat-tab label="All student events"> <app-coordinator-event-list [reports]="allReports" [events]="allEvents" (approvingEvent)="approveEvent($event)" (approvingReport)="approveReport($event)"></app-coordinator-event-list></mat-tab>
+  <mat-tab label="My student events"> <app-faculty-event-list [students]="students" (approvingEvent)="approveEventAsAdvisor($event)" (approvingReport)="approveReportAsAdvisor($event)"></app-faculty-event-list></mat-tab>
 </mat-tab-group>
 
 

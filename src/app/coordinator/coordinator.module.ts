@@ -5,10 +5,15 @@ import { CoordinatorRoutingModule } from './coordinator-routing.module';
 import { StaffModule } from '../staff/staff.module';
 import { FacultyModule } from '../faculty/faculty.module';
 
-//Material
+import { AddModuleModule } from '../add-module/add-module.module';
+import { ListModuleModule } from '../list-module/list-module.module';
+import { UtilityModuleModule } from '../utility-module/utility-module.module';
+
+// Material
 import { MatButtonModule } from '@angular/material';
 import { MatIconModule } from '@angular/material';
 import { MatTabsModule } from '@angular/material';
+import { MatListModule } from '@angular/material';
 
 import { CoordinatorComponent } from './coordinator.component';
 
@@ -20,7 +25,11 @@ import { CoordinatorComponent } from './coordinator.component';
     MatIconModule,
     MatButtonModule,
     MatTabsModule,
-    StaffModule
+    MatListModule,
+    StaffModule,
+    AddModuleModule,
+    ListModuleModule,
+    UtilityModuleModule
   ],
   declarations: [
     CoordinatorComponent

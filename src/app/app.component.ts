@@ -75,4 +75,12 @@ export class AppComponent {
       }
     }
   }
+
+  yeah() {
+    console.log(this.generalService.getError());
+    this.phdProgramService.getPhd(10).subscribe(
+      result => {},
+      error => { console.log(this.generalService.getError()); }
+    );
+  }
 }

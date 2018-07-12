@@ -21,7 +21,8 @@ import { Course } from '../../model/course';
 export class PhdComponent implements OnInit {
 
   phd = new PhdProgram();
-  courses: Course[];
+  courses: Course[] = [];
+  cycles: CycleOfPhd[] = [];
   phdId;
   toolbarTitle = 'PhD';
 
@@ -33,16 +34,6 @@ export class PhdComponent implements OnInit {
 
   ngOnInit() {
 
-    //The switchMap operator also cancels previous in-flight requests. 
-    //If the user re-navigates to this route with a new id while the phdService is still retrieving the old id, 
-    //switchMap discards that old request and returns the hero for the new id.
-    /*let observable: Observable<PhdProgram>;
-    observable = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => this.phdService.getPhd(params.get('id'))
-    ));
-    observable.subscribe(result => {
-      this.phd = result;
-    });}*/
     this.phdId = this.route.snapshot.paramMap.get('id');
     this.phdService.getPhd(this.phdId).subscribe(
       result => { this.phd = result; },
@@ -52,8 +43,12 @@ export class PhdComponent implements OnInit {
       result => { this.courses = result; },
       error => { console.log(error); }
     );
+    this.cycleService.getCycles(this.phdId).subscribe(
+      result => { this.cycles = result; },
+      error => { console.log(error); }
+    );
   }
-  
+
   goToCourse(course) {
     this.router.navigate(['/add-course', this.phd.id, course.id]);
   }

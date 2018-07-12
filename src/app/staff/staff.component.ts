@@ -15,7 +15,10 @@ export class StaffComponent implements OnInit {
   toolbarTitle = 'PhD Programs';
   phdPrograms: PhdProgram[] = [];
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private phdService: PhdProgramService) {}
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private phdService: PhdProgramService) {}
 
   ngOnInit() {
     this.phdService.getPhdPrograms().subscribe(

@@ -1,17 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { AppModule } from '../app.module';
+
 import { FacultyComponent } from './faculty.component';
-import { CourseComponent } from './course/course.component';
+import { CourseViewComponent } from './course-view/course-view.component';
 
 import { FacultyRoutingModule } from './faculty-routing.module';
+
+import { AddModuleModule } from '../add-module/add-module.module';
+import { ListModuleModule } from '../list-module/list-module.module';
+import { UtilityModuleModule } from '../utility-module/utility-module.module';
 
 import { FormsModule } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 
-import { NgPipesModule } from 'ngx-pipes';
-
-//Material
+// Material
 import { MatTabsModule } from '@angular/material';
 import { MatExpansionModule } from '@angular/material';
 import { MatCardModule } from '@angular/material';
@@ -22,11 +26,8 @@ import { MatButtonModule } from '@angular/material';
 import { MatDividerModule } from '@angular/material';
 import { MatIconModule } from '@angular/material';
 
-//Module
+// Module
 import { StaffModule } from '../staff/staff.module';
-import { CourseViewComponent } from './course-view/course-view.component';
-import { RegistrationListComponent } from './registration-list/registration-list.component';
-
 
 @NgModule({
   imports: [
@@ -43,18 +44,16 @@ import { RegistrationListComponent } from './registration-list/registration-list
     MatButtonModule,
     MatDividerModule,
     MatIconModule,
-    NgPipesModule
+    AddModuleModule,
+    ListModuleModule,
+    UtilityModuleModule
   ],
   declarations: [
     FacultyComponent,
-    CourseComponent,
-    CourseViewComponent,
-    RegistrationListComponent
+    CourseViewComponent
   ],
   exports: [
-    CourseComponent,
-    CourseViewComponent,
-    RegistrationListComponent
+    CourseViewComponent
   ]
 
 })

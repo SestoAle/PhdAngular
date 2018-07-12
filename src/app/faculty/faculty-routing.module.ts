@@ -9,7 +9,7 @@ import { AuthGuard } from '../guards/auth.guard';
 const facultyRoutes: Routes = [
   { path: 'scholar', redirectTo: '/faculty', pathMatch: 'full'},
   { path: 'faculty',  component: FacultyComponent, canActivate: [AuthGuard], data: {roles: ['faculty', 'scholar']}},
-  { path: 'course/:id',  component: CourseViewComponent, canActivate: [AuthGuard], 
+  { path: 'course/:id',  component: CourseViewComponent, canActivate: [AuthGuard],
     data: {roles: ['faculty', 'scholar', 'coordinator', 'student']}}
 ];
 

@@ -7,7 +7,7 @@
 			<span>Add Member</span>
 		</a>
 	</div>
-    <app-faculty-list [phd]="phd" [cycle]="cycle"></app-faculty-list>
+    <app-faculty-list [phd]="phd" [cycle]="cycle" [faculties]="faculties" (updateFaculty)="ngOnInit()"></app-faculty-list>
   </mat-tab>
   <mat-tab label="Students">
     <div class="grey" style="text-align: right">
@@ -16,6 +16,6 @@
 			<span>Add Member</span>
 		</a>
 	</div>
-	<app-student-list [phd]="phd" [cycle]="cycle"></app-student-list>
+	<app-student-list [phd]="phd" [cycle]="cycle" [students]="students" (removingStudent)="ngOnInit()"></app-student-list>
   </mat-tab>
 </mat-tab-group>

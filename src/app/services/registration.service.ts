@@ -9,6 +9,8 @@ import { GeneralService } from './general.service';
 
 import { Registration } from '../model/registration';
 
+import { of } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,22 +23,22 @@ export class RegistrationService {
 
   getRegistrations(courseId) {
     return this.http.get<Registration[]>(`${ this.general.uri }/courses/${ courseId }/registrations?_expand=student`)
-      .pipe(catchError(this.general.handleErrorObservable));
+      .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
   getStudentRegistrations(studentId) {
     return this.http.get<Registration[]>(`${ this.general.uri }/students/${ studentId }/registrations?_expand=course`)
-      .pipe(catchError(this.general.handleErrorObservable));
+      .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
   deleteRegistration(id) {
     return this.http.delete(`${ this.general.uri }/registrations/${ id }`)
-      .pipe(catchError(this.general.handleErrorObservable));
+      .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
   addRegistration(studentId, registration) {
     return this.http.post(`${ this.general.uri }/students/${ studentId }/registrations/`, registration)
-      .pipe(catchError(this.general.handleErrorObservable));
+      .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
   patchRegistration(registration) {
@@ -44,6 +46,6 @@ export class RegistrationService {
     // delete registration.student;
     // delete registration.course;
     return this.http.patch(`${ this.general.uri }/registrations/${ registration.id }`, registration)
-      .pipe(catchError(this.general.handleErrorObservable));
+      .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 }

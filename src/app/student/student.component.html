@@ -1,6 +1,31 @@
 <h2 class="grey">{{student.firstname}} {{student.lastname}}</h2>
-<mat-tab-group mat-stretch-tabs>
+<h5 class="grey" style="margin:20px">Total CFU: {{totalCfu}}</h5>
+<mat-tab-group mat-stretch-tabs class="student-component">
 	<mat-tab label="Registrations"><app-student-registration-list [registrations]="registrations" (removingRegistration)="ngOnInit()"></app-student-registration-list></mat-tab>
-	<mat-tab label="My CFU"> <app-cfu-list [registrations]="registrations" [totalCfu]="totalCfu"></app-cfu-list></mat-tab>
+	<mat-tab label="My CFU">		
+		<mat-tab-group mat-stretch-tabs>
+			<mat-tab label="Courses">
+				<app-cfu-list [registrations]="registrations"></app-cfu-list>
+			</mat-tab>
+			<mat-tab label="Events">
+				<div class="grey" style="text-align: right">
+					<a mat-button [routerLink]="['/add-event', -1]">
+						<mat-icon> add</mat-icon>
+						<span>Add Event</span>
+					</a>
+				</div>
+				<app-event-list (removedEvent)="ngOnInit()" [events]="events"></app-event-list>
+			</mat-tab>
+			<mat-tab label="Reports">
+				<div class="grey" style="text-align: right">
+					<a mat-button [routerLink]="['/add-report', -1]">
+						<mat-icon> add</mat-icon>
+						<span>Add Report</span>
+					</a>
+				</div>
+				<app-report-list (removedReport)="ngOnInit()" [reports]="reports"></app-report-list>
+			</mat-tab>
+		</mat-tab-group> 
+	</mat-tab>
 	<mat-tab label="All courses"> <app-course-list [courses]="allCourses" [student]="student" (courseClick)="openDialog($event, course)"></app-course-list></mat-tab>
 </mat-tab-group>

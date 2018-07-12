@@ -75,3 +75,9 @@ a.edit-link:hover, a.edit-text:hover {
 	margin: auto;
 	width: 30%;
 }
+
+.mat-line {
+    word-wrap: break-word !important;
+    white-space: pre-wrap !important;
+    height:initial !important;
+}

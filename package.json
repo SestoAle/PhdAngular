@@ -2,7 +2,7 @@
   "name": "phd-app",
   "version": "0.0.0",
   "scripts": {
-    "start": "json-server db.json --routes routes.json",
+    "start": "json-server --no-delete-cascade db.json",
     "start-auth": "node server.js"
   },
   "private": true,

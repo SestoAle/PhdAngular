@@ -1,5 +1,7 @@
 import { Faculty } from './faculty';
 import { Scholar } from './scholar';
+import { Event } from './event';
+import { Report } from './report';
 
 export class Student {
   id: number;
@@ -15,4 +17,6 @@ export class Student {
   password: string;
   cycleOfPhdId: number;
   phdProgramId: number;
+  events: Event[];
+  reports: Report[];
 }

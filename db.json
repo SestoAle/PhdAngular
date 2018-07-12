@@ -31,7 +31,7 @@
   ],
   "faculties": [
     {
-      "role": "faculty",
+      "role": "coordinator",
       "phdProgramId": "1",
       "cycleOfPhdId": "35",
       "firstname": "Paolo",
@@ -53,30 +53,6 @@
       "webpage": "www.pietro.it",
       "email": "pietro.pala@unifi.it",
       "id": 2
-    },
-    {
-      "role": "faculty",
-      "phdProgramId": "1",
-      "cycleOfPhdId": "36",
-      "firstname": "Paolo",
-      "lastname": "Frasconi",
-      "username": "paolo",
-      "password": "frasconi",
-      "webpage": "www.paolo",
-      "email": "paolo.frasconi@unifi.it",
-      "id": 3
-    },
-    {
-      "role": "faculty",
-      "phdProgramId": "1",
-      "cycleOfPhdId": "36",
-      "firstname": "Pietro",
-      "lastname": "Pala",
-      "username": "pietro",
-      "password": "pietro",
-      "webpage": "www.pietro.it",
-      "email": "pietro.pala@unifi.it",
-      "id": 4
     }
   ],
   "students": [
@@ -86,9 +62,9 @@
       ],
       "externalAdvisor": {
         "role": "scholar",
-        "firstname": "Keanu",
-        "lastname": "Reeves",
-        "webpage": "www.sito.it"
+        "firstname": "asd",
+        "lastname": "asd",
+        "webpage": "asd"
       },
       "role": "student",
       "phdProgramId": "1",
@@ -97,29 +73,9 @@
       "lastname": "Sestini",
       "username": "alessandro",
       "password": "alessandro",
-      "webpage": "www.alessandro.it",
-      "email": "alessandrosesitni92@gmail.com",
+      "webpage": "asdasklj",
+      "email": "aklsjdas",
       "id": 1
-    },
-    {
-      "facultyId": [
-        1
-      ],
-      "externalAdvisor": {
-        "role": "scholar",
-        "firstname": "Keanu",
-        "lastname": "Reeves"
-      },
-      "role": "student",
-      "phdProgramId": "1",
-      "cycleOfPhdId": "35",
-      "firstname": "Francesco",
-      "lastname": "Lombardi",
-      "username": "francesco",
-      "password": "francesco",
-      "webpage": "www.sito.it",
-      "email": "francescolombardi94@gmail.com",
-      "id": 2
     }
   ],
   "courses": [
@@ -133,10 +89,10 @@
       "id": 1,
       "teacherIds": {
         "scholars": [
-          2,
-          7
+          5
         ],
         "faculties": [
+          1,
           2
         ]
       },
@@ -174,15 +130,22 @@
       ],
       "teacherIds": {
         "scholars": [
-          7
+          5
         ],
-        "faculties": []
+        "faculties": [
+          2
+        ]
       },
       "materials": [
         {
           "link": null,
           "text": "asda",
           "date": "2018-07-08T15:18:55.142Z"
+        },
+        {
+          "link": null,
+          "text": "asdasdasdasdasdasdasdasdasd",
+          "date": "2018-07-10T17:53:45.573Z"
         }
       ],
       "title": "Introduction to deep learning with Keras",
@@ -207,7 +170,10 @@
         "scholars": [
           7
         ],
-        "faculties": []
+        "faculties": [
+          1,
+          2
+        ]
       },
       "materials": [],
       "title": "Real-time systems: 50 years of evolution",
@@ -230,7 +196,7 @@
       ],
       "teacherIds": {
         "scholars": [
-          2
+          5
         ],
         "faculties": []
       },
@@ -249,6 +215,32 @@
       "phdProgramId": "1",
       "id": 6,
       "year": 2018
+    },
+    {
+      "schedules": [],
+      "teacherIds": {
+        "scholars": [
+          5
+        ],
+        "faculties": [
+          1
+        ]
+      },
+      "materials": [
+        {
+          "link": "Image and Video Analysis - Relazione.pdf",
+          "text": "sahdgahjs",
+          "date": "2018-07-10T09:30:55.257Z"
+        }
+      ],
+      "title": "Ciao",
+      "year": 2018,
+      "abstract": "ciao",
+      "site": "mio",
+      "duration": 1,
+      "cfu": 5,
+      "phdProgramId": "1",
+      "id": 7
     }
   ],
   "scholars": [
@@ -288,7 +280,204 @@
       "id": 10
     }
   ],
-  "registrations": [],
+  "registrations": [
+    {
+      "grade": null,
+      "studentId": "1",
+      "courseId": 1,
+      "id": 1
+    },
+    {
+      "grade": null,
+      "studentId": "1",
+      "courseId": 4,
+      "id": 2
+    },
+    {
+      "grade": null,
+      "studentId": "1",
+      "courseId": 5,
+      "id": 3
+    },
+    {
+      "grade": "20",
+      "studentId": "1",
+      "courseId": 7,
+      "id": 4,
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar"
+        },
+        "role": "student",
+        "events": null,
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Alessandro",
+        "lastname": "Sestini",
+        "username": "alessandro",
+        "password": "alessandro",
+        "webpage": "www.sito.it",
+        "email": "alessandrosestini92@gmail.com",
+        "id": 1
+      }
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-07-10T09:19:53.205Z",
+      "approvedByAdvisor": true,
+      "approved": true,
+      "studentId": 1,
+      "phdProgramId": "1",
+      "description": "Ciao",
+      "link": "ciao",
+      "proposedCfu": 4,
+      "id": 1,
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar"
+        },
+        "role": "student",
+        "events": null,
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Alessandro",
+        "lastname": "Sestini",
+        "username": "alessandro",
+        "password": "alessandro",
+        "webpage": "www.sito.it",
+        "email": "alessandrosestini92@gmail.com",
+        "id": 1
+      }
+    },
+    {
+      "date": "2018-07-10T09:32:38.450Z",
+      "approvedByAdvisor": true,
+      "approved": true,
+      "studentId": 1,
+      "phdProgramId": "1",
+      "description": "sakjdaslkdj",
+      "link": "dkjddksjf",
+      "proposedCfu": 5,
+      "id": 2,
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar"
+        },
+        "role": "student",
+        "events": null,
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Alessandro",
+        "lastname": "Sestini",
+        "username": "alessandro",
+        "password": "alessandro",
+        "webpage": "www.sito.it",
+        "email": "alessandrosestini92@gmail.com",
+        "id": 1
+      },
+      "year": 2019
+    },
+    {
+      "date": "2018-07-10T13:09:36.313Z",
+      "approvedByAdvisor": true,
+      "approved": true,
+      "studentId": 1,
+      "phdProgramId": "1",
+      "description": "Ciao",
+      "link": "ciao",
+      "proposedCfu": 5,
+      "id": 3,
+      "student": {
+        "facultyId": [
+          1,
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar"
+        },
+        "role": "student",
+        "events": null,
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Alessandro",
+        "lastname": "Sestini",
+        "username": "alessandro",
+        "password": "alessandro",
+        "webpage": "www.sito.it",
+        "email": "alessandrosestini92@gmail.com",
+        "id": 1,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "pietro",
+            "password": "pietro",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "date": "2018-07-10T14:08:16.598Z",
+      "approvedByAdvisor": true,
+      "approved": true,
+      "studentId": 1,
+      "phdProgramId": "1",
+      "description": "Ciao",
+      "link": "ciao",
+      "proposedCfu": 5,
+      "id": 4,
+      "student": {
+        "facultyId": [
+          1,
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar"
+        },
+        "role": "student",
+        "events": null,
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Alessandro",
+        "lastname": "Sestini",
+        "username": "alessandro",
+        "password": "alessandro",
+        "webpage": "www.sito.it",
+        "email": "alessandrosestini92@gmail.com",
+        "id": 1,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "pietro",
+            "password": "pietro",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
+    }
+  ],
   "registeredCourses": [
     {
       "title": "GPU programming basics",
@@ -365,6 +554,80 @@
           "date": "2018-07-08T10:27:10.071Z"
         }
       ]
+    }
+  ],
+  "reports": [
+    {
+      "approvedByAdvisor": true,
+      "approved": true,
+      "studentId": 1,
+      "phdProgramId": "1",
+      "year": 2018,
+      "proposedCfu": 7,
+      "id": 1,
+      "relation": "Image and Video Analysis - Relazione.pdf",
+      "student": {
+        "facultyId": [
+          1,
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar"
+        },
+        "role": "student",
+        "events": null,
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Alessandro",
+        "lastname": "Sestini",
+        "username": "alessandro",
+        "password": "alessandro",
+        "webpage": "www.sito.it",
+        "email": "alessandrosestini92@gmail.com",
+        "id": 1,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "pietro",
+            "password": "pietro",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "approvedByAdvisor": true,
+      "approved": true,
+      "studentId": 1,
+      "phdProgramId": "1",
+      "year": 2019,
+      "proposedCfu": 5,
+      "id": 2,
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar"
+        },
+        "role": "student",
+        "events": null,
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Alessandro",
+        "lastname": "Sestini",
+        "username": "alessandro",
+        "password": "alessandro",
+        "webpage": "www.sito.it",
+        "email": "alessandrosestini92@gmail.com",
+        "id": 1
+      }
     }
   ]
 }
