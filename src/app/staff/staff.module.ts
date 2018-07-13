@@ -59,28 +59,14 @@ import { StaffRoutingModule } from './staff-routing.module';
   ],
   declarations: [
     StaffComponent,
-    //AddPhdComponent,
     PhdComponent,
-    //AddCycleComponent,
-    MembersComponent,
-    //FacultyListComponent,
-    //BackComponent,
-    //EditRemoveComponent,
-    //AddMemberComponent,
-    //StudentListComponent,
-    //CourseListComponent,
-    //CycleListComponent,
-    //ScheduleListComponent,
-    //AddCourseComponent
+    MembersComponent
   ],
   providers: [
     PhdProgramService,
     CycleService
   ],
   exports: [
-    //CourseListComponent,
-    //ScheduleListComponent,
-    //EditRemoveComponent
   ]
 })
 export class StaffModule { }

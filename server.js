@@ -6,7 +6,9 @@ const jwt = require('jsonwebtoken')
 const server = jsonServer.create();
 const router = jsonServer.router('./db.json');
 
-const userdb = JSON.parse(fs.readFileSync('./users.json', 'UTF-8'));
+var db = JSON.parse(fs.readFileSync('./db.json', 'UTF-8'));
+var userdb = [];
+userdb = userdb.concat(db.students, db.scholars, db.faculties, db.staffs);
 
 server.use(jsonServer.defaults());
 server.use(bodyParser.urlencoded({extended: true}))
@@ -27,7 +29,10 @@ function verifyToken(token){
 
 // Check if the user exists in database
 function isAuthenticated({username, password}){
-  return userdb.users.findIndex(user => user.username === username && user.password === password) !== -1
+  db = JSON.parse(fs.readFileSync('./db.json', 'UTF-8'));
+  userdb = [];
+  userdb = userdb.concat(db.students, db.scholars, db.faculties, db.staffs);
+  return userdb.findIndex(user => user.username === username && user.password === password) !== -1
 }
 
 server.post('/auth/login', (req, res) => {
@@ -38,9 +43,8 @@ server.post('/auth/login', (req, res) => {
     res.status(status).json({status, message})
     return
   }
-  index = {"role":"2"};
   const token = createToken({username, password})
-  const user = userdb.users.find(user => user.username === username && user.password === password);
+  const user = userdb.find(user => user.username === username && user.password === password);
   res.status(200).json({token, user})
 });
 

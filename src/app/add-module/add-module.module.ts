@@ -46,7 +46,8 @@ import { MatCheckboxModule } from '@angular/material';
     MatSidenavModule,
     MatTableModule,
     MatCheckboxModule,
-    UtilityModuleModule
+    UtilityModuleModule,
+    AddRoutingModule
   ],
   declarations: [
     AddCourseComponent,
