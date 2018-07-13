@@ -44,6 +44,7 @@ export class AppComponent {
   }
 
   updatePage() {
+    // Manage the MyPage link
     if (!localStorage.getItem('currentUser')) {
       return '';
     }
@@ -74,13 +75,5 @@ export class AppComponent {
         return;
       }
     }
-  }
-
-  yeah() {
-    console.log(this.generalService.getError());
-    this.phdProgramService.getPhd(10).subscribe(
-      result => {},
-      error => { console.log(this.generalService.getError()); }
-    );
   }
 }

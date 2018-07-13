@@ -46,24 +46,30 @@ export class AddCourseComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // Get IDs from routes
     const phdId = +this.route.snapshot.paramMap.get('phdId');
     const courseId = +this.route.snapshot.paramMap.get('courseId');
 
+    // Get PhD of this course
     this.phdService.getPhd(phdId).subscribe(
       result => { this.phd = result; },
       error => { console.log(error); }
     );
 
+    // Get all scholars in this PhD
     this.scholarService.getScholars(phdId).subscribe(
       result => { this.scholarsList = result; },
       error => { console.log(error); }
     );
 
+    // Get all faculties in this PhD
     this.facultyService.getAllFaculties(phdId).subscribe(
       result => { this.facultyList = result; },
       error => { console.log(error); }
     );
 
+    // Check if this is an update operation or a create one:
+    // if parameter courseId of routing is > 0, then is an update operation
     if (courseId >= 0) {
       this.update = true;
       this.courseService.getCourse(courseId).subscribe(
@@ -77,8 +83,11 @@ export class AddCourseComponent implements OnInit {
     this.loading = true;
 
     let observable;
+
+    // If it's an update operation, make a Patch request
+    // If it isn't, make a Post request
     if (!this.update) {
-      observable = this.courseService.postCourse(this.phd.id, this.newCourse);
+      observable = this.courseService.addCourse(this.phd.id, this.newCourse);
     } else {
       observable = this.courseService.patchCourse(this.newCourse.id, this.newCourse);
     }
@@ -89,7 +98,8 @@ export class AddCourseComponent implements OnInit {
   }
 
   addScholar() {
-    console.log(this.newScholar);
+
+    // Add a new scholar to the PhD and to this course
     this.newScholar.phdId = this.phd.id;
     this.scholarService.addScholar(this.newScholar.phdId, this.newScholar).subscribe(
       result => {
@@ -106,12 +116,14 @@ export class AddCourseComponent implements OnInit {
   }
 
   addSchedule() {
+    // Add a new schedule
     this.newCourse.schedules.push(this.newSchedule);
     this.newCourse.schedules = this.newCourse.schedules.slice();
     this.newSchedule = new Schedule();
   }
 
   removeSchedule(schedule) {
+    // Remove a schedule
     const index = this.newCourse.schedules.indexOf(schedule);
     this.newCourse.schedules.splice(index, 1);
     this.newCourse.schedules = this.newCourse.schedules.slice();

@@ -31,6 +31,7 @@ export class FacultyListComponent implements OnInit {
   }
 
   removeFaculty($event, id) {
+    // Delete the faculty and emit the event that notify the component parent
     this.facultyService.deleteFaculty(id).subscribe(
       result => { this.updateFaculty.emit(); },
       error => { console.log(error); }
@@ -38,6 +39,7 @@ export class FacultyListComponent implements OnInit {
   }
 
   importFaculty() {
+    // Import faculties from the previous cycle, if it exist
     this.facultyService.getFaculties(this.phd.id, (this.cycle.id - 1))
       .pipe(map(
         faculties => faculties

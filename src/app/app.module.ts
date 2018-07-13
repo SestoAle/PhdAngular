@@ -17,7 +17,6 @@ import { StudentModule } from './student/student.module';
 import { AuthGuard } from './guards/auth.guard';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { AuthenticationService } from './services/authentication.service';
-import { HomeComponent } from './home/home.component';
 
 // Material Modules
 import { MatCardModule } from '@angular/material';
@@ -34,8 +33,7 @@ import { RegistrationDialogComponent } from './utility-module/registration-dialo
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent
+    AppComponent
   ],
   imports: [
     LoginModule,

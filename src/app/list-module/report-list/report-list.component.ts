@@ -23,6 +23,7 @@ export class ReportListComponent implements OnInit {
   }
 
   removeReport(event, report) {
+    // Delete the report and emit the event that notify the component parent
     this.reportService.deleteReport(report).subscribe(
       result => { this.removedReport.emit(); },
       error => { console.log(error); }

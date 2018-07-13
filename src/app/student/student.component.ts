@@ -45,10 +45,13 @@ export class StudentComponent implements OnInit {
     this.student = JSON.parse(localStorage.getItem('currentUser'));
     this.totalCfu = 0;
 
+    // Get all registrations of this student
     this.registrationService.getStudentRegistrations(this.student.id).subscribe(
       result => {
         this.registrations = result;
+        // Update the totalCfu for each registration evaluated
         this.registrations.forEach(reg => {if (reg.grade) { this.totalCfu += reg.course.cfu; }});
+        // Get all courses of this PhD and filter the array removing the course in which the student is already enrolled
         this.courseService.getCourses(this.student.phdProgramId)
           .pipe(map(courses => courses.filter(course => !this.registrations.some(x => x.courseId === course.id))))
           .subscribe(
@@ -59,17 +62,21 @@ export class StudentComponent implements OnInit {
       error => { console.log(error); }
     );
 
+    // Get all the events of this student
     this.eventService.getEvents(this.student.id).subscribe(
       result => {
         this.events = result;
+        // Update the totalCfu for each event evaluated
         this.events.forEach(event => {if (event.approved) { this.totalCfu += event.proposedCfu; }});
       },
       error => { console.log(error); }
     );
 
+    // Get all the reports of this student
     this.reoprtService.getReports(this.student.id).subscribe(
       result => {
         this.reports = result;
+        // Update the totalCfu for each report evaluated
         this.reports.forEach(report => {if (report.approved) { this.totalCfu += report.proposedCfu; }});
       },
       error => { console.log(error); }
@@ -77,6 +84,7 @@ export class StudentComponent implements OnInit {
   }
 
   openDialog(course) {
+    // Open dialog of a course
     const dialogRef = this.dialog.open(RegistrationDialogComponent, {
       width: '500px',
       data: {

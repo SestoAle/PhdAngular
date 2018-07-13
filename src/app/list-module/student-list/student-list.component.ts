@@ -27,6 +27,7 @@ export class StudentListComponent implements OnInit {
   }
 
   removeStudent(id) {
+    // Delete the student and emit the event that notify the component parent
     this.studentService.deleteStudent(id).subscribe(
       result => { this.removingStudent.emit(); },
       error => { console.log(error); }

@@ -16,13 +16,16 @@ export class AddPhdComponent implements OnInit {
   newPhd = new PhdProgram();
   update = false;
   loading = false;
-  error = '';
 
   constructor(private location: Location, private phdService: PhdProgramService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.update = false;
+
+    // Get id of PhD from route parameter
     const id = +this.route.snapshot.paramMap.get('id');
+    // Check if this is an update operation or a create one:
+    // if parameter id of routing is > 0, then is an update operation
     if (id >= 0) {
       this.update = true;
       this.phdService.getPhd(id).subscribe(
@@ -32,21 +35,18 @@ export class AddPhdComponent implements OnInit {
     }
   }
 
-  goBack() {
-    this.location.back();
-  }
-
   addPhd() {
     this.loading = true;
-    this.error = '';
+    let observable;
+    // If it's an update operation, make a Patch request
+    // If it isn't, make a Post request
     if (!this.update) {
-      this.phdService.addPhd(this.newPhd).subscribe(
-        data => { this.location.back(); },
-        error => { console.log(error); });
+      observable = this.phdService.addPhd(this.newPhd);
     } else {
-      this.phdService.patchPhd(this.newPhd.id, this.newPhd).subscribe(
+      observable = this.phdService.patchPhd(this.newPhd.id, this.newPhd);
+    }
+    observable.subscribe(
         data => { this.location.back(); },
         error => { console.log(error); });
-    }
   }
 }

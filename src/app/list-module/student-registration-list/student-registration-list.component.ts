@@ -22,6 +22,7 @@ export class StudentRegistrationListComponent implements OnInit {
   }
 
   removeRegistration(event, registration) {
+    // Delete the registration and emit the event that notify the component parent
     this.registrationService.deleteRegistration(registration.id).subscribe(
       result => {
         this.removingRegistration.emit();

@@ -22,26 +22,31 @@ export class PhdProgramService {
     private general: GeneralService
   ) { }
 
+  // Get all PhDs
   getPhdPrograms() {
     return this.http.get<PhdProgram[]>(`${ this.general.uri }/phdPrograms`)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
+  // Add a PhD
   addPhd(phd) {
     return this.http.post(`${ this.general.uri }/phdPrograms`, phd)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
+  // Get a PhD
   getPhd(id) {
     return this.http.get<PhdProgram>(`${ this.general.uri }/phdPrograms/${ id }`)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
+  // Delete a PhD
   deletePhd(id) {
     return this.http.delete(`${ this.general.uri }/phdPrograms/${ id }`)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
+  // Patch a PhD
   patchPhd(id, changes) {
     return this.http.patch(`${ this.general.uri }/phdPrograms/${ id }`, changes)
       .pipe(catchError(error => of(this.general.setError(true, error))));

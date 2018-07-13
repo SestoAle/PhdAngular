@@ -25,7 +25,6 @@ export class RegistrationDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) private data: any) {}
 
   ngOnInit() {
-    console.log(this.data);
     this.course = this.data.course;
     this.student = this.data.student;
   }

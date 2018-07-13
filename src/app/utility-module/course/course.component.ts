@@ -32,10 +32,12 @@ export class CourseComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // Get the current user from local storage
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   inputFile(event) {
+    // Manage the input file
     const fileList: FileList = event.target.files;
     if (fileList.length > 0) {
       this.newFile = fileList[0];
@@ -47,6 +49,7 @@ export class CourseComponent implements OnInit {
   }
 
   removeMaterial(material) {
+    // Remove a material from the course
     const index = this.course.materials.indexOf(material);
     this.course.materials.splice(index, 1);
     this.courseService.addMaterial(this.currentUser.id, this.course).subscribe(
@@ -59,11 +62,13 @@ export class CourseComponent implements OnInit {
   }
 
   addMaterial() {
+    // Add a material to the course
     this.loading = true;
     this.newMaterial.date = new Date();
     this.course.materials.push(this.newMaterial);
     if (this.newFile) {
       // TODO in Backend
+      // Upload material to service
       // this.courseService.uploadMaterial(this.course.id, this.newFile);
     }
     this.courseService.addMaterial(this.currentUser.id, this.course).subscribe(
@@ -77,6 +82,7 @@ export class CourseComponent implements OnInit {
   }
 
   addSchedule() {
+    // Add a schedule to the course
     this.course.schedules.push(this.newSchedule);
     this.courseService.patchCourse(this.course.id, this.course).subscribe(
       result => {
@@ -88,6 +94,7 @@ export class CourseComponent implements OnInit {
   }
 
   removeSchedule(schedule) {
+    // Remove a material from the course
     const index = this.course.schedules.indexOf(schedule);
     this.course.schedules.splice(index, 1);
     this.courseService.patchCourse(this.course.id, this.course).subscribe(

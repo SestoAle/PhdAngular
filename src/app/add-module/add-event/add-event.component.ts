@@ -30,7 +30,11 @@ export class AddEventComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // Get user data from localStorage
     this.student = JSON.parse(localStorage.getItem('currentUser'));
+
+    // Check if this is an update operation or a create one:
+    // if parameter eventId of routing is >= 0, then is an update operation
     const eventId = +this.route.snapshot.paramMap.get('id');
     if (eventId >= 0) {
       this.update = true;
@@ -47,6 +51,8 @@ export class AddEventComponent implements OnInit {
   addEvent() {
     this.loading = true;
     let observable;
+    // If it's an update operation, make a Patch request
+    // If it isn't, make a Post request
     if (this.update) {
       observable = this.eventService.patchEvent(this.newEvent);
     } else {

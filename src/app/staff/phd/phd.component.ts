@@ -35,14 +35,20 @@ export class PhdComponent implements OnInit {
   ngOnInit() {
 
     this.phdId = this.route.snapshot.paramMap.get('id');
+
+    // Get the PhD
     this.phdService.getPhd(this.phdId).subscribe(
       result => { this.phd = result; },
       error => { console.log(error); }
     );
+
+    // Get all courses of this PhD
     this.courseService.getCourses(this.phdId).subscribe(
       result => { this.courses = result; },
       error => { console.log(error); }
     );
+
+    // Get all cycle of this PhD
     this.cycleService.getCycles(this.phdId).subscribe(
       result => { this.cycles = result; },
       error => { console.log(error); }

@@ -34,6 +34,9 @@ export class AddCycleComponent implements OnInit {
 
   ngOnInit() {
     this.update = false;
+
+    // Get cycleId from the route parameter: if it's > 0, then is an update operation;
+    // else is a create operation
     const cycleId = +this.route.snapshot.paramMap.get('cycleId');
     if (cycleId >= 0) {
       this.update = true;
@@ -43,8 +46,11 @@ export class AddCycleComponent implements OnInit {
       );
     }
 
+    // Get phdId from the parameter route
     this.phdId = this.route.snapshot.paramMap.get('phdId');
     this.newCycle.phdProgramId = this.phdId;
+
+    // Get the PhD of this course
     this.phdService.getPhd(this.phdId).subscribe(result => {
       this.phd = result;
       this.cycleService.getCycles(this.phdId).subscribe( data => {
@@ -59,23 +65,29 @@ export class AddCycleComponent implements OnInit {
   }
 
     addCycle() {
+
       this.loading = true;
       this.error = '';
       this.newCycle.num = this.romanize(this.newCycle.numNumber);
+
+      let observable;
+
+      // If it's an update operation, make a Patch request
+      // If it isn't, make a Post request
       if (!this.update) {
-        this.cycleService.addCycle(this.phd.id, this.newCycle).subscribe(
-        data => { this.location.back(); },
-        error => { console.log(error); }
-        );
+        observable = this.cycleService.addCycle(this.phd.id, this.newCycle);
       } else {
-        this.cycleService.patchCycle(this.newCycle.id, this.newCycle).subscribe(
+        observable = this.cycleService.patchCycle(this.newCycle.id, this.newCycle);
+      }
+
+      observable.subscribe(
         data => { this.location.back(); },
         error => { console.log(error); }
-        );
-      }
+      );
   }
 
   romanize (num) {
+    // Convert from number to Roman number
     if (!+num) {
       return '';
     }
@@ -92,6 +104,7 @@ export class AddCycleComponent implements OnInit {
 }
 
   deromanize (str) {
+    // Convert from Roman Number to number
     str = str.toUpperCase();
     const validator = /^M*(?:D?C{0,3}|C[MD])(?:L?X{0,3}|X[CL])(?:V?I{0,3}|I[XV])$/;
     const token = /[MDLV]|C[MD]?|X[CL]?|I[XV]?/g;

@@ -22,16 +22,19 @@ export class StudentService {
     private general: GeneralService
   ) { }
 
+  // Get all students of a cycle, including their advisor
   getStudents(phdId, cycleId) {
     return this.http.get<Student[]>(`${ this.general.uri }/phdPrograms/${ phdId }/cycleOfPhds/${ cycleId }/students?_expand=faculty`)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
+  // Get a student
   getStudent(id) {
     return this.http.get<Student>(`${ this.general.uri }/students/${ id }?_expand=faculty`)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
+  // Add a student in a cycle
   addStudent(phdId, cycleId, student) {
     // Back-end operations
     delete student.faculty;
@@ -39,6 +42,7 @@ export class StudentService {
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
+  // Patch a student
   patchStudent(id, student) {
     // Back-end operation
     delete student.faculty;
@@ -46,6 +50,7 @@ export class StudentService {
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
+  // Delete a student
   deleteStudent(id) {
     return this.http.delete(`${ this.general.uri }/students/${ id }`)
       .pipe(catchError(error => of(this.general.setError(true, error))));

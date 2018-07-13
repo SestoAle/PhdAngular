@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
 export class JwtInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    // Intercept all the HTTP requests and add the token to the header;
+    // The token is stored within the user information when he's logged
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
         if (currentUser && currentUser.token) {
             request = request.clone({

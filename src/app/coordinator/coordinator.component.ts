@@ -42,32 +42,39 @@ export class CoordinatorComponent implements OnInit {
     private courseService: CourseService) { }
 
   ngOnInit() {
+    // Get the current user from localStorage
     this.coordinator = JSON.parse(localStorage.getItem('currentUser'));
 
+    // Get the PhD of this user
     this.phdService.getPhd(this.coordinator.phdProgramId).subscribe(
       data => { this.phd = data; },
       error => { console.log(error); });
 
+    // Get all the courses of this PhD
     this.courseService.getCourses(this.coordinator.phdProgramId).subscribe(
       result => { this.allCourses = result; console.log(result); },
       error => { console.log(error); }
     );
 
+    // Get the courses of this Faculty
     this.facultyService.getCourses(this.coordinator.id).subscribe(
       result => { this.registeredCourses = result; },
       error => { console.log(error); }
     );
 
+    // Get all events of all the students of his PhD
     this.eventService.getEventsToApprove(this.coordinator.phdProgramId).subscribe(
       result => {this.allEvents = result; },
       error => { console.log(error); }
     );
 
+    // Get all reports of all the students of his PhD
     this.reportService.getReportToApprove(this.coordinator.phdProgramId).subscribe(
       result => { this.allReports = result; },
       error => { console.log(error); }
     );
 
+    // If he's an advisor, get all of his students
     this.facultyService.getFacultyStudents(this.coordinator.id).subscribe(
       result => { this.students = result; },
       error => { console.log(error); }
@@ -85,6 +92,7 @@ export class CoordinatorComponent implements OnInit {
 
   approveEvent(event: Event) {
     event.approved = true;
+    // Approve the event as coordinator, Patch the event object
     this.eventService.patchEvent(event).subscribe(
       result => { this.ngOnInit(); },
       error => { console.log(error); }
@@ -93,6 +101,7 @@ export class CoordinatorComponent implements OnInit {
 
   approveReport(report: Report) {
     report.approved = true;
+    // Approve the report as coordinator, Patch the event object
     this.reportService.patchReport(report).subscribe(
       result => { this.ngOnInit(); },
       error => { console.log(error); }
@@ -101,6 +110,7 @@ export class CoordinatorComponent implements OnInit {
 
   approveEventAsAdvisor(event) {
     event.approvedByAdvisor = true;
+    // Approve the event as advisor, Patch the event object
     this.eventService.patchEvent(event).subscribe(
       result => { this.ngOnInit(); },
       error => { console.log(error); }
@@ -109,6 +119,7 @@ export class CoordinatorComponent implements OnInit {
 
   approveReportAsAdvisor(report) {
     report.approvedByAdvisor = true;
+    // Approve the report as advisor, Patch the event object
     this.reportService.patchReport(report).subscribe(
       result => { this.ngOnInit(); },
       error => { console.log(error); }

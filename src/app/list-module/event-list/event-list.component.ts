@@ -22,6 +22,7 @@ export class EventListComponent implements OnInit {
   }
 
   removeEvent(ev, event) {
+    // Delete the course and emit the event that notify the component parent
     this.eventService.deleteEvent(event).subscribe(
       result => { this.removedEvent.emit(); },
       error => { console.log(error); }

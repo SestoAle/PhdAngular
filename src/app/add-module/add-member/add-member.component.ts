@@ -24,7 +24,6 @@ export class AddMemberComponent implements OnInit {
   memberClass = 'faculty';
   isFaculty = true;
   loading = false;
-  error = '';
   update = false;
   newMember;
   isCoordinator = false;
@@ -41,9 +40,12 @@ export class AddMemberComponent implements OnInit {
 
   ngOnInit() {
     this.update = false;
+    // Get the current user from the local storage
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    // Get phdId and cycleId from route
     this.phdId = this.route.snapshot.paramMap.get('phdId');
     this.cycleId = this.route.snapshot.paramMap.get('cycleId');
+    // Get the member class from the route
     this.memberClass = this.route.snapshot.paramMap.get('memberClass');
     const memberId = +this.route.snapshot.paramMap.get('facultyId');
 
@@ -53,6 +55,8 @@ export class AddMemberComponent implements OnInit {
     this.newMember.cycleOfPhdId = this.cycleId;
 
     let observable;
+    // Check if this is an update operation or a create one:
+    // if parameter memberId of routing is > 0, then is an update operation
     if (memberId >= 0) {
       this.update = true;
       if (this.memberClass === 'faculty') {
@@ -72,8 +76,9 @@ export class AddMemberComponent implements OnInit {
         );
     }
   }
-  
+
   createMember() {
+    // Depending on memberClass, create the object of the right type
     if (this.memberClass === 'student') {
       this.newMember = new Student();
       this.facultyService.getFaculties(this.phdId, this.cycleId).subscribe(
@@ -88,16 +93,16 @@ export class AddMemberComponent implements OnInit {
   }
 
   addMember() {
-    console.log("yrah");
-    console.log(this.isCoordinator);
     this.loading = true;
-    this.error = '';
 
     if (this.isCoordinator) {
       this.newMember.role = 'coordinator';
     }
 
     let observable;
+    // Depending on memberClass, create the object of the right type
+    // For each memberClass, if it's an update operation, make a Patch request
+    // If it isn't, make a Post request
     if (this.memberClass === 'faculty') {
       if (!this.update) {
         observable = this.facultyService.addFaculty(this.phdId, this.cycleId, this.newMember);

@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { Registration } from '../../model/registration';
 
-import { RegistrationService } from '../../services/registration.service'
+import { RegistrationService } from '../../services/registration.service';
 
 @Component({
   selector: 'app-registration-list',
@@ -27,8 +27,8 @@ export class RegistrationListComponent implements OnInit {
   }
 
   sendEmail(body, email) {
-    //TODO send real email
-    console.log(body + " " + email);
+    // TODO send real email
+    console.log(body + ' ' + email);
   }
 
 }

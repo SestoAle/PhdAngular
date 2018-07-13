@@ -37,21 +37,25 @@ export class MembersComponent implements OnInit {
     const phdId = this.route.snapshot.paramMap.get('phd');
     const cycleId = this.route.snapshot.paramMap.get('cycle');
 
+    // Get the PhD
     this.phdService.getPhd(phdId).subscribe(
       result => { this.phd = result; },
       error => { console.log(error); }
     );
 
+    // Get the cycle
     this.cycleService.getCycle(cycleId).subscribe(
       result => { this.cycle = result; },
       error => { console.log(error); }
     );
 
+    // Get all faculties of this cycle
     this.facultyService.getFaculties(phdId, cycleId).subscribe(
       result => { this.faculties = result; },
       error => { console.log(error); }
     );
 
+    // Get all students of this cycle
     this.studentService.getStudents(phdId, cycleId).subscribe(
       result => { this.students = result; },
       error => { console.log(error); }

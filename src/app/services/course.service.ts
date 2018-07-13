@@ -21,46 +21,55 @@ export class CourseService {
     private general: GeneralService
   ) { }
 
+  // Get all courses of a PhD
   getCourses(phdId) {
     return this.http.get<Course[]>(`${ this.general.uri }/phdPrograms/${ phdId }/courses`)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
+  // Get all scholars of a course
   getScholarInCourse(id) {
     return this.http.get<Scholar[]>(`${ this.general.uri }/courses/${ id }/scholars`)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
+  // Get a course
   getCourse(id) {
     return this.http.get<Course>(`${ this.general.uri }/courses/${ id }`)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
+  // Delete a course
   deleteCourse(id) {
     return this.http.delete(`${ this.general.uri }/courses/${ id }`)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
-  postCourse(phdId, course) {
+  // Add a course
+  addCourse(phdId, course) {
     return this.http.post(`${ this.general.uri }/phdPrograms/${ phdId }/courses`, course)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
+  // Patch a course
   patchCourse(id, course) {
     return this.http.patch(`${ this.general.uri }/courses/${ id }`, course)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
+  // Get a course of a faculty
   getFacultyCourse(facultyId, courseId) {
     return this.http.get<Course>(`${ this.general.uri }/faculties/${ facultyId }/courses/${ courseId }`)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
+  // Add material to a course
   addMaterial(facultyId, course) {
     return this.http.patch(`${ this.general.uri }/courses/${ course.id }`, course)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
+  // Template to upload a file
   uploadMaterial(courseId, file) {
     const formData: FormData = new FormData();
     formData.append('uploadFile', file, file.name);

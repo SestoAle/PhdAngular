@@ -30,15 +30,18 @@ export class AddReportComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // Get current user from local storage
     this.student = JSON.parse(localStorage.getItem('currentUser'));
     const reportId = +this.route.snapshot.paramMap.get('id');
+    // Check if this is an update operation or a create one:
+    // if parameter reportId of routing is > 0, then is an update operation
     if (reportId > 0) {
       this.update = true;
       this.reportService.getReport(reportId).subscribe(
         result => { this.newReport = result; },
         error => { console.log(error); }
       );
-    } else {
+    } else if (this.student.role === 'student') {
       this.newReport.studentId = this.student.id;
       this.newReport.phdProgramId = this.student.phdProgramId;
     }
@@ -48,8 +51,11 @@ export class AddReportComponent implements OnInit {
     this.loading = true;
     if (this.newFile) {
       // TODO in Back-end
+      // upload newFile to the server
     }
     let observable;
+    // If it's an update operation, make a Patch request
+    // If it isn't, make a Post request
     if (this.update) {
       observable = this.reportService.patchReport(this.newReport);
     } else {
@@ -62,6 +68,7 @@ export class AddReportComponent implements OnInit {
   }
 
   inputFile(event) {
+    // Manage the input of type 'file'
     const fileList: FileList = event.target.files;
     if (fileList.length > 0) {
       this.newFile = fileList[0];

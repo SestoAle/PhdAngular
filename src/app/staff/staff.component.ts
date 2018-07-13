@@ -21,6 +21,7 @@ export class StaffComponent implements OnInit {
     private phdService: PhdProgramService) {}
 
   ngOnInit() {
+    // Get all PhDs
     this.phdService.getPhdPrograms().subscribe(
       result => this.phdPrograms = result,
       error => { console.log(error); }
@@ -28,6 +29,7 @@ export class StaffComponent implements OnInit {
   }
 
   removePhd(event, id) {
+    // Delete a PhD
     this.phdService.deletePhd(id).subscribe(
       result => { this.ngOnInit(); },
       error => { console.log(error); });

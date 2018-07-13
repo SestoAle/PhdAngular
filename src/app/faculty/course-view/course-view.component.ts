@@ -29,14 +29,19 @@ export class CourseViewComponent implements OnInit {
     private registrationService: RegistrationService) { }
 
   ngOnInit() {
+    // Get the current user from Local Storage
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    // Get courseId from router parameter
     this.courseId = this.route.snapshot.paramMap.get('id');
 
+    // Get course
     this.courseService.getCourse(this.courseId).subscribe(
       result => { this.course = result; },
       error => { console.log(error); }
     );
 
+    // Get all the student registration of this course
     this.registrationService.getRegistrations(this.courseId).subscribe(
       result => { this.registrations = result; },
       error => { console.log(error); }
