@@ -45,9 +45,9 @@ export class CycleService {
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
-  // Patch a cycle
-  patchCycle(id, cycle) {
-    return this.http.patch(`${ this.general.uri }/cycleOfPhds/${ id }`, cycle)
+  // Put a cycle
+  putCycle(id, cycle) {
+    return this.http.put(`${ this.general.uri }/cycleOfPhds/${ id }`, cycle)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 }

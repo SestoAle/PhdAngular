@@ -94,11 +94,9 @@ export class AddMemberComponent implements OnInit {
 
   addMember() {
     this.loading = true;
-
     if (this.isCoordinator) {
       this.newMember.role = 'coordinator';
     }
-
     let observable;
     // Depending on memberClass, create the object of the right type
     // For each memberClass, if it's an update operation, make a Patch request
@@ -107,20 +105,23 @@ export class AddMemberComponent implements OnInit {
       if (!this.update) {
         observable = this.facultyService.addFaculty(this.phdId, this.cycleId, this.newMember);
       } else {
-        observable = this.facultyService.patchFaculty(this.newMember.id, this.newMember);
+        if (!this.isCoordinator) {
+          this.newMember.role = 'faculty';
+        }
+        observable = this.facultyService.putFaculty(this.newMember.id, this.newMember);
       }
     } else if (this.memberClass === 'student') {
       if (!this.update) {
         observable = this.studentService.addStudent(this.phdId, this.cycleId, this.newMember);
       } else {
-        observable = this.studentService.patchStudent(this.newMember.id, this.newMember);
+        observable = this.studentService.putStudent(this.newMember.id, this.newMember);
       }
     } else if (this.memberClass === 'scholar') {
       delete this.newMember.cycleOfPhdId;
       if (!this.update) {
         observable = this.scholarService.addScholar(this.phdId, this.newMember);
       } else {
-        observable = this.scholarService.patchScholar(this.newMember.id, this.newMember);
+        observable = this.scholarService.putScholar(this.newMember.id, this.newMember);
       }
     }
     observable.subscribe(

@@ -54,7 +54,7 @@ export class AddEventComponent implements OnInit {
     // If it's an update operation, make a Patch request
     // If it isn't, make a Post request
     if (this.update) {
-      observable = this.eventService.patchEvent(this.newEvent);
+      observable = this.eventService.putEvent(this.newEvent);
     } else {
       observable = this.eventService.addEvent(this.newEvent);
     }

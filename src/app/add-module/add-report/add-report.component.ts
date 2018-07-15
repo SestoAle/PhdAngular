@@ -57,7 +57,7 @@ export class AddReportComponent implements OnInit {
     // If it's an update operation, make a Patch request
     // If it isn't, make a Post request
     if (this.update) {
-      observable = this.reportService.patchReport(this.newReport);
+      observable = this.reportService.putReport(this.newReport);
     } else {
       observable = this.reportService.addReport(this.newReport);
     }

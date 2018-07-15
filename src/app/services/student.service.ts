@@ -43,10 +43,10 @@ export class StudentService {
   }
 
   // Patch a student
-  patchStudent(id, student) {
+  putStudent(id, student) {
     // Back-end operation
     delete student.faculty;
-    return this.http.patch(`${ this.general.uri }/students/${ id }`, student)
+    return this.http.put(`${ this.general.uri }/students/${ id }`, student)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 

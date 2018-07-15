@@ -65,9 +65,9 @@ export class FacultyService {
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
-  // Patch a faculty
-  patchFaculty(id, faculty) {
-    return this.http.patch(`${ this.general.uri }/faculties/${ id }`, faculty)
+  // Put a faculty
+  putFaculty(id, faculty) {
+    return this.http.put(`${ this.general.uri }/faculties/${ id }`, faculty)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 }

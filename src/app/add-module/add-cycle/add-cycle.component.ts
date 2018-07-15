@@ -77,7 +77,7 @@ export class AddCycleComponent implements OnInit {
       if (!this.update) {
         observable = this.cycleService.addCycle(this.phd.id, this.newCycle);
       } else {
-        observable = this.cycleService.patchCycle(this.newCycle.id, this.newCycle);
+        observable = this.cycleService.putCycle(this.newCycle.id, this.newCycle);
       }
 
       observable.subscribe(

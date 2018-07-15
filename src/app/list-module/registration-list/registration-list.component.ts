@@ -20,7 +20,7 @@ export class RegistrationListComponent implements OnInit {
 
   submitGrade(registration: Registration, grade) {
     registration.grade = grade;
-    this.registrationService.patchRegistration(registration).subscribe(
+    this.registrationService.putRegistration(registration).subscribe(
       result => { console.log(result); },
       error => { console.log(error); }
     );

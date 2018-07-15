@@ -39,9 +39,9 @@ export class ReportService {
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
-  // Patch a report
-  patchReport(report) {
-    return this.http.patch(`${ this.general.uri }/reports/${ report.id }`, report)
+  // Put a report
+  putReport(report) {
+    return this.http.put(`${ this.general.uri }/reports/${ report.id }`, report)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 

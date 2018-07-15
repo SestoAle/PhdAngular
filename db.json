@@ -7,26 +7,47 @@
     {
       "name": "Smart Computing",
       "id": 2
+    },
+    {
+      "name": "PhD",
+      "id": 3
     }
   ],
   "cycleOfPhds": [
     {
       "phdProgramId": "1",
       "id": 35,
-      "durationInYears": 3,
+      "numNumber": 35,
+      "durationInYears": 5,
       "num": "XXXV"
     },
     {
       "phdProgramId": "1",
       "id": 36,
+      "numNumber": 36,
       "durationInYears": 3,
       "num": "XXXVI"
     },
     {
       "phdProgramId": "1",
       "id": 37,
+      "numNumber": 37,
       "durationInYears": 3,
       "num": "XXXVII"
+    },
+    {
+      "phdProgramId": "1",
+      "numNumber": 38,
+      "durationInYears": 3,
+      "num": "XXXVIII",
+      "id": 38
+    },
+    {
+      "phdProgramId": "2",
+      "numNumber": 1,
+      "durationInYears": 3,
+      "num": "I",
+      "id": 39
     }
   ],
   "faculties": [
@@ -135,27 +156,15 @@
       "id": 1,
       "teacherIds": {
         "scholars": [
-          5
+          5,
+          2
         ],
         "faculties": [
           1,
           2
         ]
       },
-      "schedules": [
-        {
-          "day": "asdas",
-          "beginTime": "asdasd",
-          "endTime": "asdasd",
-          "location": "asdasd"
-        },
-        {
-          "day": "asd",
-          "beginTime": "asd",
-          "endTime": "asd",
-          "location": "asd"
-        }
-      ],
+      "schedules": [],
       "materials": [
         {
           "link": "Image and Video Analysis - Relazione.pdf",
@@ -185,6 +194,7 @@
           5
         ],
         "faculties": [
+          1,
           2
         ]
       },
@@ -304,6 +314,16 @@
       "phdId": 1,
       "phdProgramId": "1",
       "id": 10
+    },
+    {
+      "role": "scholar",
+      "firstname": "asd",
+      "lastname": "asd",
+      "username": "asd",
+      "password": "asd",
+      "phdId": 1,
+      "phdProgramId": "1",
+      "id": 11
     }
   ],
   "registrations": [
@@ -349,16 +369,95 @@
       }
     },
     {
-      "grade": null,
+      "grade": "25",
       "studentId": "1",
       "courseId": 4,
-      "id": 2
+      "id": 2,
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar",
+          "firstname": "Kenau",
+          "lastname": "Reeves",
+          "webpage": "www.kenaureeves.it"
+        },
+        "role": "student",
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Alessandro",
+        "lastname": "Sestini",
+        "username": "alessandro",
+        "password": "alessandro",
+        "webpage": "www.alessandrosestini.it",
+        "email": "alessandrosestini92@gmail.com",
+        "id": 1,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "pietro",
+            "password": "pietro",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "grade": "25",
+      "studentId": "2",
+      "courseId": 1,
+      "id": 5,
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar"
+        },
+        "role": "student",
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Francesco",
+        "lastname": "Lombardi",
+        "username": "francesco",
+        "password": "francesco",
+        "webpage": "www.francescolombardi.it",
+        "email": "francescolombardi93@gmail.com",
+        "id": 2,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "pietro",
+            "password": "pietro",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
     },
     {
       "grade": null,
       "studentId": "2",
-      "courseId": 1,
-      "id": 5
+      "courseId": 5,
+      "id": 6
+    },
+    {
+      "grade": null,
+      "studentId": "1",
+      "courseId": 6,
+      "id": 7
     }
   ],
   "events": [
@@ -410,14 +509,49 @@
     },
     {
       "date": "2018-07-13T11:07:40.162Z",
-      "approvedByAdvisor": false,
-      "approved": false,
+      "approvedByAdvisor": true,
+      "approved": true,
       "studentId": 1,
       "phdProgramId": "1",
       "description": "Submit at another conference",
       "link": "www.anotherconference.it",
       "proposedCfu": 3,
-      "id": 2
+      "id": 2,
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar",
+          "firstname": "Kenau",
+          "lastname": "Reeves",
+          "webpage": "www.kenaureeves.it"
+        },
+        "role": "student",
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Alessandro",
+        "lastname": "Sestini",
+        "username": "alessandro",
+        "password": "alessandro",
+        "webpage": "www.alessandrosestini.it",
+        "email": "alessandrosestini92@gmail.com",
+        "id": 1,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "pietro",
+            "password": "pietro",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
     },
     {
       "date": "2018-07-13T11:09:08.151Z",
@@ -446,6 +580,98 @@
         "webpage": "www.francescolombardi.it",
         "email": "francescolombardi93@gmail.com",
         "id": 2,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "pietro",
+            "password": "pietro",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "date": "2018-07-13T17:06:25.549Z",
+      "approvedByAdvisor": true,
+      "approved": true,
+      "studentId": 1,
+      "phdProgramId": "1",
+      "description": "asdsa",
+      "link": "asd",
+      "proposedCfu": 5,
+      "id": 4,
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar",
+          "firstname": "Kenau",
+          "lastname": "Reeves",
+          "webpage": "www.kenaureeves.it"
+        },
+        "role": "student",
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Alessandro",
+        "lastname": "Sestini",
+        "username": "alessandro",
+        "password": "alessandro",
+        "webpage": "www.alessandrosestini.it",
+        "email": "alessandrosestini92@gmail.com",
+        "id": 1,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "pietro",
+            "password": "pietro",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "date": "2018-07-14T18:23:41.261Z",
+      "approvedByAdvisor": true,
+      "approved": true,
+      "studentId": 1,
+      "phdProgramId": "1",
+      "proposedCfu": 5,
+      "description": "xzc",
+      "link": "xxc",
+      "id": 5,
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar",
+          "firstname": "Kenau",
+          "lastname": "Reeves",
+          "webpage": "www.kenaureeves.it"
+        },
+        "role": "student",
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Alessandro",
+        "lastname": "Sestini",
+        "username": "alessandro",
+        "password": "alessandro",
+        "webpage": "www.alessandrosestini.it",
+        "email": "alessandrosestini92@gmail.com",
+        "id": 1,
         "faculties": [
           {
             "role": "faculty",
@@ -571,6 +797,48 @@
         "webpage": "www.alessandrosestini.it",
         "email": "alessandrosestini92@gmail.com",
         "id": 1,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "pietro",
+            "password": "pietro",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "approvedByAdvisor": true,
+      "approved": true,
+      "studentId": 2,
+      "phdProgramId": "1",
+      "year": 2018,
+      "proposedCfu": 5,
+      "id": 2,
+      "relation": "screenshot.pdf",
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar"
+        },
+        "role": "student",
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Francesco",
+        "lastname": "Lombardi",
+        "username": "francesco",
+        "password": "francesco",
+        "webpage": "www.francescolombardi.it",
+        "email": "francescolombardi93@gmail.com",
+        "id": 2,
         "faculties": [
           {
             "role": "faculty",

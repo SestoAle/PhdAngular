@@ -43,7 +43,7 @@ export class AddPhdComponent implements OnInit {
     if (!this.update) {
       observable = this.phdService.addPhd(this.newPhd);
     } else {
-      observable = this.phdService.patchPhd(this.newPhd.id, this.newPhd);
+      observable = this.phdService.putPhd(this.newPhd.id, this.newPhd);
     }
     observable.subscribe(
         data => { this.location.back(); },

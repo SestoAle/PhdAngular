@@ -52,9 +52,9 @@ export class EventService {
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
-  // Patch an event
-  patchEvent(event) {
-    return this.http.patch(`${ this.general.uri }/events/${ event.id }`, event)
+  // Put an event
+  putEvent(event) {
+    return this.http.put(`${ this.general.uri }/events/${ event.id }`, event)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 

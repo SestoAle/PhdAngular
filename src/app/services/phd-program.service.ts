@@ -46,9 +46,9 @@ export class PhdProgramService {
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
-  // Patch a PhD
-  patchPhd(id, changes) {
-    return this.http.patch(`${ this.general.uri }/phdPrograms/${ id }`, changes)
+  // Put a PhD
+  putPhd(id, changes) {
+    return this.http.put(`${ this.general.uri }/phdPrograms/${ id }`, changes)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 }

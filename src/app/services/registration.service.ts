@@ -45,12 +45,12 @@ export class RegistrationService {
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
-  // Patch a registration
-  patchRegistration(registration) {
+  // Put a registration
+  putRegistration(registration) {
     // Back-end operation
     // delete registration.student;
     // delete registration.course;
-    return this.http.patch(`${ this.general.uri }/registrations/${ registration.id }`, registration)
+    return this.http.put(`${ this.general.uri }/registrations/${ registration.id }`, registration)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 }

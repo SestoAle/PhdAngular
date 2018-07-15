@@ -66,7 +66,7 @@ export class FacultyComponent implements OnInit {
   approveEvent(event: Event) {
     event.approvedByAdvisor = true;
     // Approve the event as advisor, Patch the event object
-    this.eventService.patchEvent(event).subscribe(
+    this.eventService.putEvent(event).subscribe(
       result => { this.ngOnInit(); },
       error => { console.log(error); }
     );
@@ -75,7 +75,7 @@ export class FacultyComponent implements OnInit {
   approveReport(report: Report) {
     report.approvedByAdvisor = true;
     // Approve the report as advisor, Patch the report object
-    this.reportService.patchReport(report).subscribe(
+    this.reportService.putReport(report).subscribe(
       result => { this.ngOnInit(); },
       error => { console.log(error); }
     );

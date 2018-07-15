@@ -89,7 +89,7 @@ export class AddCourseComponent implements OnInit {
     if (!this.update) {
       observable = this.courseService.addCourse(this.phd.id, this.newCourse);
     } else {
-      observable = this.courseService.patchCourse(this.newCourse.id, this.newCourse);
+      observable = this.courseService.putCourse(this.newCourse.id, this.newCourse);
     }
 
     observable.subscribe(

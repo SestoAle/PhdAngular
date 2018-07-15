@@ -40,9 +40,9 @@ export class ScholarService {
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
-  // Patch a scholar
-  patchScholar(id, scholar) {
-    return this.http.patch(`${ this.general.uri }/scholars/${ id }`, scholar)
+  // Put a scholar
+  putScholar(id, scholar) {
+    return this.http.put(`${ this.general.uri }/scholars/${ id }`, scholar)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 

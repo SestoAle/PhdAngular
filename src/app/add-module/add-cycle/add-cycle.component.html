@@ -6,7 +6,7 @@
 	<h4 class ="grey">PhD {{phd.name}}</h4>
 		<div *ngIf="error" class="alert alert-danger">Something is went wrong, try again!</div>
 		<mat-form-field class="full-width" >
-	    	<input [disabled]="update" matInput value="newCycle.num" placeholder="Insert number in digits: {{ cycles.length > 0 ? 'last is ' + deromanize(lastCycle) : 'no cycle entered' }}" type="number" name="cyclenum" [(ngModel)]="newCycle.numNumber" #cyclenum="ngModel" required />
+	    	<input [disabled]="update" matInput value="newCycle.numNumber" placeholder="Insert number in digits: {{ cycles.length > 0 ? 'last is ' + deromanize(lastCycle) : 'no cycle entered' }}" type="number" name="cyclenum" [(ngModel)]="newCycle.numNumber" #cyclenum="ngModel" required />
 		</mat-form-field>
 		<mat-error *ngIf="f.submitted && !cyclenum.valid">
 			The number is required!

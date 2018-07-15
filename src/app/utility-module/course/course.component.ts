@@ -84,7 +84,7 @@ export class CourseComponent implements OnInit {
   addSchedule() {
     // Add a schedule to the course
     this.course.schedules.push(this.newSchedule);
-    this.courseService.patchCourse(this.course.id, this.course).subscribe(
+    this.courseService.putCourse(this.course.id, this.course).subscribe(
       result => {
         this.newSchedule = new Schedule();
         this.course.schedules = this.course.schedules.slice();
@@ -97,7 +97,7 @@ export class CourseComponent implements OnInit {
     // Remove a material from the course
     const index = this.course.schedules.indexOf(schedule);
     this.course.schedules.splice(index, 1);
-    this.courseService.patchCourse(this.course.id, this.course).subscribe(
+    this.courseService.putCourse(this.course.id, this.course).subscribe(
       result => {
         this.newSchedule = new Schedule();
         this.course.schedules = this.course.schedules.slice();

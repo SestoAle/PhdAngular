@@ -51,9 +51,9 @@ export class CourseService {
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
-  // Patch a course
-  patchCourse(id, course) {
-    return this.http.patch(`${ this.general.uri }/courses/${ id }`, course)
+  // Put a course
+  putCourse(id, course) {
+    return this.http.put(`${ this.general.uri }/courses/${ id }`, course)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
