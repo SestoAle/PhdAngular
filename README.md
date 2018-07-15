@@ -9,7 +9,7 @@ This project aims to build a User Interface Angular 2+ for the management of PhD
 
 2. Go to project folder and execute 'node server.js' to start json-server and jsonwebtoken;
 
-3. Go to project folder and execute 'ng serve' to start the Angular App (thorugh Angular CLI);
+3. Go to project folder and execute 'ng serve' to start the Angular App (through Angular CLI);
 
 4. To log the system, follow the table below:
 
