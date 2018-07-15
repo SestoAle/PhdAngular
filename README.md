@@ -23,3 +23,8 @@
 | **Faculty**                            | faculty         | faculty  |
 | **Scholar**                            | scholar         | scholar  |
 | **Student**                            | student         | student  |
+
+## Example
+Application example
+
+![Application example](/example/screenshot)
