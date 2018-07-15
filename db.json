@@ -7,10 +7,6 @@
     {
       "name": "Smart Computing",
       "id": 2
-    },
-    {
-      "name": "PhD",
-      "id": 3
     }
   ],
   "cycleOfPhds": [
@@ -57,8 +53,8 @@
       "cycleOfPhdId": "35",
       "firstname": "Paolo",
       "lastname": "Frasconi",
-      "username": "paolo",
-      "password": "frasconi",
+      "username": "coord",
+      "password": "coord",
       "webpage": "www.paolo",
       "email": "paolo.frasconi@unifi.it",
       "id": 1
@@ -69,8 +65,8 @@
       "cycleOfPhdId": "35",
       "firstname": "Pietro",
       "lastname": "Pala",
-      "username": "pietro",
-      "password": "pietro",
+      "username": "faculty",
+      "password": "faculty",
       "webpage": "www.pietro.it",
       "email": "pietro.pala@unifi.it",
       "id": 2
@@ -92,8 +88,8 @@
       "cycleOfPhdId": "35",
       "firstname": "Alessandro",
       "lastname": "Sestini",
-      "username": "alessandro",
-      "password": "alessandro",
+      "username": "student",
+      "password": "student",
       "webpage": "www.alessandrosestini.it",
       "email": "alessandrosestini92@gmail.com",
       "id": 1,
@@ -104,8 +100,8 @@
           "cycleOfPhdId": "35",
           "firstname": "Pietro",
           "lastname": "Pala",
-          "username": "pietro",
-          "password": "pietro",
+          "username": "faculty",
+          "password": "faculty",
           "webpage": "www.pietro.it",
           "email": "pietro.pala@unifi.it",
           "id": 2
@@ -156,8 +152,7 @@
       "id": 1,
       "teacherIds": {
         "scholars": [
-          5,
-          2
+          1
         ],
         "faculties": [
           1,
@@ -191,25 +186,15 @@
       ],
       "teacherIds": {
         "scholars": [
-          5
+          1,
+          2
         ],
         "faculties": [
           1,
           2
         ]
       },
-      "materials": [
-        {
-          "link": null,
-          "text": "asda",
-          "date": "2018-07-08T15:18:55.142Z"
-        },
-        {
-          "link": null,
-          "text": "asdasdasdasdasdasdasdasdasd",
-          "date": "2018-07-10T17:53:45.573Z"
-        }
-      ],
+      "materials": [],
       "title": "Introduction to deep learning with Keras",
       "abstract": "Neural networks foundations: MLP, creating a simple network with Keras, towards deep learning Keras installation and API Deep learning with ConvNets, DCNN layers, experimenting with basic datasets, very deep networks, Generative Adversarial Networks, GANs and images.",
       "site": "www.sito.it",
@@ -258,7 +243,7 @@
       ],
       "teacherIds": {
         "scholars": [
-          5
+          1
         ],
         "faculties": []
       },
@@ -281,49 +266,24 @@
   ],
   "scholars": [
     {
-      "id": 5,
+      "role": "scholar",
       "firstname": "Marco",
       "lastname": "Bertini",
-      "webpage": "www.sito.it",
-      "phdProgramId": 1,
-      "email": "marco.bertini@unifi.it",
       "username": "scholar",
-      "password": "scholar"
+      "password": "scholar",
+      "phdId": 1,
+      "phdProgramId": "1",
+      "id": 1
     },
     {
-      "id": 2,
+      "role": "scholar",
       "firstname": "Lorenzo",
       "lastname": "Seidenari",
-      "webpage": "www.sito.it",
-      "phdProgramId": 1
-    },
-    {
-      "firstname": "Stefano",
-      "lastname": "Berretti",
-      "webpage": "www.stefano.it",
+      "username": "lorenzo",
+      "password": "lorenzo",
       "phdId": 1,
       "phdProgramId": "1",
-      "id": 7
-    },
-    {
-      "role": "scholar",
-      "firstname": "Luca",
-      "lastname": "Boncompagni",
-      "username": "luca",
-      "password": "boncompagni",
-      "phdId": 1,
-      "phdProgramId": "1",
-      "id": 10
-    },
-    {
-      "role": "scholar",
-      "firstname": "asd",
-      "lastname": "asd",
-      "username": "asd",
-      "password": "asd",
-      "phdId": 1,
-      "phdProgramId": "1",
-      "id": 11
+      "id": 2
     }
   ],
   "registrations": [
@@ -580,98 +540,6 @@
         "webpage": "www.francescolombardi.it",
         "email": "francescolombardi93@gmail.com",
         "id": 2,
-        "faculties": [
-          {
-            "role": "faculty",
-            "phdProgramId": "1",
-            "cycleOfPhdId": "35",
-            "firstname": "Pietro",
-            "lastname": "Pala",
-            "username": "pietro",
-            "password": "pietro",
-            "webpage": "www.pietro.it",
-            "email": "pietro.pala@unifi.it",
-            "id": 2
-          }
-        ]
-      }
-    },
-    {
-      "date": "2018-07-13T17:06:25.549Z",
-      "approvedByAdvisor": true,
-      "approved": true,
-      "studentId": 1,
-      "phdProgramId": "1",
-      "description": "asdsa",
-      "link": "asd",
-      "proposedCfu": 5,
-      "id": 4,
-      "student": {
-        "facultyId": [
-          2
-        ],
-        "externalAdvisor": {
-          "role": "scholar",
-          "firstname": "Kenau",
-          "lastname": "Reeves",
-          "webpage": "www.kenaureeves.it"
-        },
-        "role": "student",
-        "phdProgramId": "1",
-        "cycleOfPhdId": "35",
-        "firstname": "Alessandro",
-        "lastname": "Sestini",
-        "username": "alessandro",
-        "password": "alessandro",
-        "webpage": "www.alessandrosestini.it",
-        "email": "alessandrosestini92@gmail.com",
-        "id": 1,
-        "faculties": [
-          {
-            "role": "faculty",
-            "phdProgramId": "1",
-            "cycleOfPhdId": "35",
-            "firstname": "Pietro",
-            "lastname": "Pala",
-            "username": "pietro",
-            "password": "pietro",
-            "webpage": "www.pietro.it",
-            "email": "pietro.pala@unifi.it",
-            "id": 2
-          }
-        ]
-      }
-    },
-    {
-      "date": "2018-07-14T18:23:41.261Z",
-      "approvedByAdvisor": true,
-      "approved": true,
-      "studentId": 1,
-      "phdProgramId": "1",
-      "proposedCfu": 5,
-      "description": "xzc",
-      "link": "xxc",
-      "id": 5,
-      "student": {
-        "facultyId": [
-          2
-        ],
-        "externalAdvisor": {
-          "role": "scholar",
-          "firstname": "Kenau",
-          "lastname": "Reeves",
-          "webpage": "www.kenaureeves.it"
-        },
-        "role": "student",
-        "phdProgramId": "1",
-        "cycleOfPhdId": "35",
-        "firstname": "Alessandro",
-        "lastname": "Sestini",
-        "username": "alessandro",
-        "password": "alessandro",
-        "webpage": "www.alessandrosestini.it",
-        "email": "alessandrosestini92@gmail.com",
-        "id": 1,
         "faculties": [
           {
             "role": "faculty",
