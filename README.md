@@ -13,3 +13,13 @@
 2. Go to project folder and execute 'node server.js' to start json-server and jsonwebtoken
 
 3. Go to project folder and execute 'ng serve' to start the Angular App (thorugh Angular CLI)
+
+4. To log the system, follow the table below:
+
+| Role                                   | Username        | Password |
+| ---------------------------------------|-----------------| ---------|
+| **Staff Member**                       | staff           | staff    |
+| **Coordinator**                        | coord           | coord    |
+| **Faculty**                            | faculty         | faculty  |
+| **Scholar**                            | scholar         | scholar  |
+| **Student**                            | student         | student  |
