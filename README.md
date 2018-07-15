@@ -27,4 +27,4 @@
 ## Example
 Application example
 
-![Application example](/example/screen)
+![Application example](/example/screen.png)
