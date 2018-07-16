@@ -43,16 +43,13 @@ export class AddMemberComponent implements OnInit {
     // Get the current user from the local storage
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     // Get phdId and cycleId from route
-    this.phdId = this.route.snapshot.paramMap.get('phdId');
-    this.cycleId = this.route.snapshot.paramMap.get('cycleId');
+    this.phdId = +this.route.snapshot.paramMap.get('phdId');
+    this.cycleId = +this.route.snapshot.paramMap.get('cycleId');
     // Get the member class from the route
     this.memberClass = this.route.snapshot.paramMap.get('memberClass');
     const memberId = +this.route.snapshot.paramMap.get('facultyId');
 
     this.createMember();
-
-    this.newMember.phdProgramId = this.phdId;
-    this.newMember.cycleOfPhdId = this.cycleId;
 
     let observable;
     // Check if this is an update operation or a create one:
@@ -90,6 +87,8 @@ export class AddMemberComponent implements OnInit {
     } else if (this.memberClass === 'scholar') {
       this.newMember = new Scholar();
     }
+    this.newMember.phdProgramId = this.phdId;
+    this.newMember.cycleOfPhdId = this.cycleId;
   }
 
   addMember() {
@@ -102,6 +101,7 @@ export class AddMemberComponent implements OnInit {
     // For each memberClass, if it's an update operation, make a Patch request
     // If it isn't, make a Post request
     if (this.memberClass === 'faculty') {
+      console.log(this.newMember)
       if (!this.update) {
         observable = this.facultyService.addFaculty(this.phdId, this.cycleId, this.newMember);
       } else {
@@ -111,6 +111,7 @@ export class AddMemberComponent implements OnInit {
         observable = this.facultyService.putFaculty(this.newMember.id, this.newMember);
       }
     } else if (this.memberClass === 'student') {
+      console.log(this.newMember)
       if (!this.update) {
         observable = this.studentService.addStudent(this.phdId, this.cycleId, this.newMember);
       } else {

@@ -51,4 +51,10 @@ export class ScholarService {
     return this.http.post(`${ this.general.uri }/phdPrograms/${ phdId }/scholars/`, scholar)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
+
+  // Delete a scholar
+  deleteScholar(scholarId) {
+    return this.http.delete(`${ this.general.uri }/scholars/${ scholarId }`)
+      .pipe(catchError(error => of(this.general.setError(true, error))));
+  }
 }

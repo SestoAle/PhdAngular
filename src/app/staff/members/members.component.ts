@@ -5,11 +5,13 @@ import { PhdProgram } from '../../model/phdProgram';
 import { CycleOfPhd } from '../../model/cycleOfPhd';
 import { Student } from '../../model/student';
 import { Faculty } from '../../model/faculty';
+import { Scholar } from '../../model/scholar';
 
 import { PhdProgramService } from '../../services/phd-program.service';
 import { CycleService } from '../../services/cycle.service';
 import { FacultyService } from '../../services/faculty.service';
 import { StudentService } from '../../services/student.service';
+import { ScholarService } from '../../services/scholar.service';
 
 import { TabService } from '../../services/tab.service';
 
@@ -26,6 +28,7 @@ export class MembersComponent implements OnInit {
   cycle = new CycleOfPhd();
   students: Student[] = [];
   faculties: Faculty[] = [];
+  scholars: Scholar[] = [];
 
   constructor(
     private router: Router,
@@ -34,6 +37,7 @@ export class MembersComponent implements OnInit {
     private cycleService: CycleService,
     private facultyService: FacultyService,
     private studentService: StudentService,
+    private scholarService: ScholarService,
     private tabService: TabService) { }
 
   ngOnInit() {
@@ -61,6 +65,12 @@ export class MembersComponent implements OnInit {
     // Get all students of this cycle
     this.studentService.getStudents(phdId, cycleId).subscribe(
       result => { this.students = result; },
+      error => { console.log(error); }
+    );
+
+    // Get all scholars of this PhD
+    this.scholarService.getScholars(phdId).subscribe(
+      result => { this.scholars = result; },
       error => { console.log(error); }
     );
   }

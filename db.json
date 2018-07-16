@@ -1,11 +1,11 @@
 {
   "phdPrograms": [
     {
-      "name": "Machine Learning",
+      "name": "Smart Computing",
       "id": 1
     },
     {
-      "name": "Smart Computing",
+      "name": "Machine Learning",
       "id": 2
     }
   ],
@@ -40,9 +40,9 @@
     },
     {
       "phdProgramId": "2",
-      "numNumber": 1,
+      "numNumber": 35,
       "durationInYears": 3,
-      "num": "I",
+      "num": "XXXV",
       "id": 39
     }
   ],
@@ -70,6 +70,18 @@
       "webpage": "www.pietro.it",
       "email": "pietro.pala@unifi.it",
       "id": 2
+    },
+    {
+      "role": "coordinator",
+      "phdProgramId": "2",
+      "cycleOfPhdId": "39",
+      "firstname": "Luigi",
+      "lastname": "Chisci",
+      "username": "coord2",
+      "password": "coord2",
+      "webpage": "www.sito.it",
+      "email": "luigi.chisci@unifi.it",
+      "id": 3
     }
   ],
   "students": [
@@ -139,6 +151,24 @@
           "id": 2
         }
       ]
+    },
+    {
+      "facultyId": [
+        3
+      ],
+      "externalAdvisor": {
+        "role": "scholar"
+      },
+      "role": "student",
+      "phdProgramId": 2,
+      "cycleOfPhdId": "39",
+      "firstname": "Riccardo",
+      "lastname": "Celli",
+      "username": "riccardo",
+      "password": "riccardo",
+      "webpage": "www.sito.it",
+      "email": "riccardo.celli@gmail.com",
+      "id": 3
     }
   ],
   "courses": [
@@ -159,7 +189,14 @@
           2
         ]
       },
-      "schedules": [],
+      "schedules": [
+        {
+          "day": "Mercoledì 12",
+          "beginTime": "12:00",
+          "endTime": "13:00",
+          "location": "Morgagni"
+        }
+      ],
       "materials": [
         {
           "link": "Image and Video Analysis - Relazione.pdf",
@@ -262,6 +299,26 @@
       "phdProgramId": "1",
       "id": 6,
       "year": 2018
+    },
+    {
+      "schedules": [],
+      "teacherIds": {
+        "scholars": [
+          3
+        ],
+        "faculties": [
+          3
+        ]
+      },
+      "materials": [],
+      "title": "Image and video forensics : fundamentals and applications",
+      "year": 2018,
+      "abstract": "Nowadays the pervasiveness of images and videos as primary source of information has led the image forensics community to question about their reliability and integrity more and more often. A huge amount of multimedia contents is generated in disparate manners with different devices and then uploaded on the web and shared through social platforms. Image and video forensics was born to deal with the need to verify the trustworthiness of such multimedia contents determining their authenticity and origin. In fact, recovering from digital evidence as much information as possible about the acquiring device or on the processing that has been applied could be fundamental to understand if an image is authentic or has been manipulated to change its meaning. In particular, it could be of basic importance to succeed in reconstructing the history of a specific image or video that might help in addressing an on-going forensic investigation or in debunking a certain news. Different forensic methodologies and tools are devised and employed so far to analyze digital evidences in order to reconstruct what has happened to image or video contents. The goal of this course is to provide fundamentals on different methodologies in the field of image and video forensics especially regarding source identification and tampering detection. The emphasis of the course will be on main state-of-the-art technologies and their application in different scenarios.",
+      "site": "www.sito.it",
+      "duration": 3,
+      "cfu": 3,
+      "phdProgramId": "2",
+      "id": 7
     }
   ],
   "scholars": [
@@ -284,6 +341,16 @@
       "phdId": 1,
       "phdProgramId": "1",
       "id": 2
+    },
+    {
+      "role": "scholar",
+      "firstname": "Roberto",
+      "lastname": "Caldelli",
+      "username": "scholar2",
+      "password": "scholar2",
+      "phdId": 2,
+      "phdProgramId": "2",
+      "id": 3
     }
   ],
   "registrations": [
@@ -418,6 +485,12 @@
       "studentId": "1",
       "courseId": 6,
       "id": 7
+    },
+    {
+      "grade": null,
+      "studentId": "3",
+      "courseId": 7,
+      "id": 8
     }
   ],
   "events": [

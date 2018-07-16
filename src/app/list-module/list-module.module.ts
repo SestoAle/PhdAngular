@@ -12,6 +12,7 @@ import { EventListComponent } from './event-list/event-list.component';
 import { CfuListComponent } from './cfu-list/cfu-list.component';
 import { ReportListComponent } from './report-list/report-list.component';
 import { StudentRegistrationListComponent } from './student-registration-list/student-registration-list.component';
+import { ScholarListComponent } from './scholar-list/scholar-list.component';
 
 import { AddModuleModule } from '../add-module/add-module.module';
 import { UtilityModuleModule } from '../utility-module/utility-module.module';
@@ -68,7 +69,8 @@ import { MatCheckboxModule } from '@angular/material';
     CfuListComponent,
     StudentRegistrationListComponent,
     ReportListComponent,
-    FilterPipe
+    FilterPipe,
+    ScholarListComponent
   ],
   exports: [
     CourseListComponent,
@@ -81,7 +83,8 @@ import { MatCheckboxModule } from '@angular/material';
     EventListComponent,
     CfuListComponent,
     StudentRegistrationListComponent,
-    ReportListComponent
+    ReportListComponent,
+    ScholarListComponent
   ]
 })
 export class ListModuleModule { }
