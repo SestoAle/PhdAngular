@@ -12,6 +12,7 @@ import { FacultyService } from '../services/faculty.service';
 import { ScholarService } from '../services/scholar.service';
 import { EventService } from '../services/event.service';
 import { ReportService } from '../services/report.service';
+import { TabService } from '../services/tab.service';
 
 @Component({
   selector: 'app-faculty',
@@ -30,7 +31,8 @@ export class FacultyComponent implements OnInit {
     private facultyService: FacultyService,
     private scholarService: ScholarService,
     private eventService: EventService,
-    private reportService: ReportService
+    private reportService: ReportService,
+    private tabService: TabService
   ) { }
 
   ngOnInit() {

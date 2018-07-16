@@ -1,9 +1,9 @@
 <h2 class="grey">{{student.firstname}} {{student.lastname}}</h2>
 <h5 class="grey" style="margin:20px">Total CFU: {{totalCfu}}</h5>
-<mat-tab-group mat-stretch-tabs class="student-component">
+<mat-tab-group (selectedTabChange) = "ngOnInit(); tabService.saveIndex(tab.selectedIndex, 'student')" [selectedIndex]="tabService.getIndex('student')" #tab mat-stretch-tabs class="student-component">
 	<mat-tab label="Registrations"><app-student-registration-list [registrations]="registrations" (removingRegistration)="ngOnInit()"></app-student-registration-list></mat-tab>
 	<mat-tab label="My CFU">		
-		<mat-tab-group mat-stretch-tabs>
+		<mat-tab-group (selectedTabChange) = "ngOnInit(); tabService.saveIndex(subTab.selectedIndex, 'subStudent')" [selectedIndex]="tabService.getIndex('subStudent')" #subTab mat-stretch-tabs>
 			<mat-tab label="Courses">
 				<app-cfu-list [registrations]="registrations"></app-cfu-list>
 			</mat-tab>

@@ -2,7 +2,7 @@
 	<h2><app-back></app-back> {{phd.name}}</h2>
 </div>
 
-<mat-tab-group (selectedTabChange) = "ngOnInit()" style="margin-top: 10px;" mat-stretch-tabs>
+<mat-tab-group (selectedTabChange) = "ngOnInit(); tabService.saveIndex(tab.selectedIndex, 'phd')" [selectedIndex]="tabService.getIndex('phd')" #tab style="margin-top: 10px;" mat-stretch-tabs>
   <mat-tab label="Members">
   	<div class="grey" style="text-align: right">
 		<a mat-button [routerLink]="['/add-cycle', phd.id, -1]">

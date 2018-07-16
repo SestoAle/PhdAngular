@@ -14,6 +14,7 @@ import { CourseService } from '../services/course.service';
 import { FacultyService } from '../services/faculty.service';
 import { EventService } from '../services/event.service';
 import { ReportService } from '../services/report.service';
+import { TabService } from '../services/tab.service';
 
 import { map } from 'rxjs/operators';
 
@@ -39,7 +40,8 @@ export class CoordinatorComponent implements OnInit {
     private facultyService: FacultyService,
     private eventService: EventService,
     private reportService: ReportService,
-    private courseService: CourseService) { }
+    private courseService: CourseService,
+    private tabService: TabService) { }
 
   ngOnInit() {
     // Get the current user from localStorage

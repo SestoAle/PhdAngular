@@ -8,6 +8,7 @@ import { switchMap } from 'rxjs/operators';
 import { PhdProgramService } from '../../services/phd-program.service';
 import { CycleService } from '../../services/cycle.service';
 import { CourseService } from '../../services/course.service';
+import { TabService } from '../../services/tab.service';
 
 import { PhdProgram } from '../../model/phdProgram';
 import { CycleOfPhd } from '../../model/cycleOfPhd';
@@ -30,7 +31,8 @@ export class PhdComponent implements OnInit {
     private route: ActivatedRoute,
     private phdService: PhdProgramService,
     private courseService: CourseService,
-    private cycleService: CycleService) { }
+    private cycleService: CycleService,
+    private tabService: TabService) { }
 
   ngOnInit() {
 

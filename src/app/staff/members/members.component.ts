@@ -11,6 +11,8 @@ import { CycleService } from '../../services/cycle.service';
 import { FacultyService } from '../../services/faculty.service';
 import { StudentService } from '../../services/student.service';
 
+import { TabService } from '../../services/tab.service';
+
 @Component({
   selector: 'app-members',
   templateUrl: './members.component.html',
@@ -31,7 +33,8 @@ export class MembersComponent implements OnInit {
     private phdService: PhdProgramService,
     private cycleService: CycleService,
     private facultyService: FacultyService,
-    private studentService: StudentService) { }
+    private studentService: StudentService,
+    private tabService: TabService) { }
 
   ngOnInit() {
     const phdId = this.route.snapshot.paramMap.get('phd');

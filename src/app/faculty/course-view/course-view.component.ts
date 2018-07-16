@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { CourseService } from '../../services/course.service';
 import { RegistrationService } from '../../services/registration.service';
+import { TabService } from '../../services/tab.service';
 
 import { Course } from '../../model/course';
 import { Registration } from '../../model/registration';
@@ -26,7 +27,8 @@ export class CourseViewComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private courseService: CourseService,
-    private registrationService: RegistrationService) { }
+    private registrationService: RegistrationService,
+    private tabService: TabService) { }
 
   ngOnInit() {
     // Get the current user from Local Storage

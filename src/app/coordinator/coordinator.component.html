@@ -1,4 +1,4 @@
-<mat-tab-group mat-stretch-tabs>
+<mat-tab-group (selectedTabChange) = "ngOnInit(); tabService.saveIndex(tab.selectedIndex, 'coord')" [selectedIndex]="tabService.getIndex('coord')" #tab mat-stretch-tabs>
   <mat-tab label="All courses"> 
   	<div class="grey" style="text-align: right">
 	<a mat-button [routerLink]="['/add-course', phd.id, -1]">

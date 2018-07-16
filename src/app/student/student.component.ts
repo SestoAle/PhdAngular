@@ -13,6 +13,7 @@ import { CourseService } from '../services/course.service';
 import { RegistrationService } from '../services/registration.service';
 import { EventService } from '../services/event.service';
 import { ReportService } from '../services/report.service';
+import { TabService } from '../services/tab.service';
 
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { RegistrationDialogComponent } from '../utility-module/registration-dialog/registration-dialog.component';
@@ -38,7 +39,8 @@ export class StudentComponent implements OnInit {
     private registrationService: RegistrationService,
     private eventService: EventService,
     private reoprtService: ReportService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private tabService: TabService
   ) { }
 
   ngOnInit() {

@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs/operators';
 
 import { AuthenticationService } from '../services/authentication.service';
+import { TabService } from '../services/tab.service';
 
 
 @Component({
@@ -19,12 +20,16 @@ export class LoginComponent implements OnInit {
   returnUrl: string;
   error = '';
 
-  constructor(private route: ActivatedRoute, private router: Router, private authService: AuthenticationService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private authService: AuthenticationService,
+    private tabService: TabService) { }
 
   ngOnInit() {
-    // Reset login status
+    // Reset login status and tab indexes
     this.authService.logout();
-    // Get return url from route parameters or default to '/'
+    // Get return URL from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 

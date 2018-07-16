@@ -288,7 +288,7 @@
   ],
   "registrations": [
     {
-      "grade": "25",
+      "grade": null,
       "studentId": "1",
       "courseId": 1,
       "id": 1,
@@ -329,7 +329,7 @@
       }
     },
     {
-      "grade": "25",
+      "grade": null,
       "studentId": "1",
       "courseId": 4,
       "id": 2,
@@ -370,7 +370,7 @@
       }
     },
     {
-      "grade": "25",
+      "grade": null,
       "studentId": "2",
       "courseId": 1,
       "id": 5,
@@ -424,7 +424,7 @@
     {
       "date": "2018-07-13T11:07:16.645Z",
       "approvedByAdvisor": true,
-      "approved": true,
+      "approved": false,
       "studentId": 1,
       "phdProgramId": "1",
       "description": "Submit at conference",
@@ -469,8 +469,8 @@
     },
     {
       "date": "2018-07-13T11:07:40.162Z",
-      "approvedByAdvisor": true,
-      "approved": true,
+      "approvedByAdvisor": false,
+      "approved": false,
       "studentId": 1,
       "phdProgramId": "1",
       "description": "Submit at another conference",
@@ -516,7 +516,7 @@
     {
       "date": "2018-07-13T11:09:08.151Z",
       "approvedByAdvisor": true,
-      "approved": true,
+      "approved": false,
       "studentId": 2,
       "phdProgramId": "1",
       "description": "Erasmus at Oulu",
@@ -638,7 +638,7 @@
   "reports": [
     {
       "approvedByAdvisor": true,
-      "approved": true,
+      "approved": false,
       "studentId": 1,
       "phdProgramId": "1",
       "year": 2018,
@@ -682,8 +682,8 @@
       }
     },
     {
-      "approvedByAdvisor": true,
-      "approved": true,
+      "approvedByAdvisor": false,
+      "approved": false,
       "studentId": 2,
       "phdProgramId": "1",
       "year": 2018,
