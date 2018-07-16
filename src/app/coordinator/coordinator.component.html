@@ -1,3 +1,4 @@
+<h2 class="grey">{{coordinator.firstname}} {{coordinator.lastname}}</h2>
 <mat-tab-group (selectedTabChange) = "ngOnInit(); tabService.saveIndex(tab.selectedIndex, 'coord')" [selectedIndex]="tabService.getIndex('coord')" #tab mat-stretch-tabs>
   <mat-tab label="All courses"> 
   	<div class="grey" style="text-align: right">

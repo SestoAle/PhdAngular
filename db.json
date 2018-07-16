@@ -481,16 +481,34 @@
       "id": 6
     },
     {
-      "grade": null,
-      "studentId": "1",
-      "courseId": 6,
-      "id": 7
+      "grade": "30",
+      "studentId": "3",
+      "courseId": 7,
+      "id": 8,
+      "student": {
+        "facultyId": [
+          3
+        ],
+        "externalAdvisor": {
+          "role": "scholar"
+        },
+        "role": "student",
+        "phdProgramId": 2,
+        "cycleOfPhdId": "39",
+        "firstname": "Riccardo",
+        "lastname": "Celli",
+        "username": "riccardo",
+        "password": "riccardo",
+        "webpage": "www.sito.it",
+        "email": "riccardo.celli@gmail.com",
+        "id": 3
+      }
     },
     {
       "grade": null,
-      "studentId": "3",
-      "courseId": 7,
-      "id": 8
+      "studentId": "1",
+      "courseId": 6,
+      "id": 9
     }
   ],
   "events": [
@@ -795,6 +813,16 @@
           }
         ]
       }
+    },
+    {
+      "approvedByAdvisor": false,
+      "approved": false,
+      "studentId": 1,
+      "phdProgramId": "1",
+      "year": 2018,
+      "proposedCfu": 5,
+      "id": 3,
+      "relation": "Seminary - Introduction to Funtional Python and Strict vs Lazy.pdf"
     }
   ],
   "staffs": [
