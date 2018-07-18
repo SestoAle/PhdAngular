@@ -38,7 +38,12 @@ export class AddReportComponent implements OnInit {
     if (reportId > 0) {
       this.update = true;
       this.reportService.getReport(reportId).subscribe(
-        result => { this.newReport = result; },
+        result => {
+          if (result.approvedByAdvisor) {
+            this.location.back();
+          }
+          this.newReport = result;
+        },
         error => { console.log(error); }
       );
     } else if (this.student.role === 'student') {

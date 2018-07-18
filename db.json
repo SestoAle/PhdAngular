@@ -55,7 +55,7 @@
       "lastname": "Frasconi",
       "username": "coord",
       "password": "coord",
-      "webpage": "www.paolo",
+      "webpage": "www.paolo.it",
       "email": "paolo.frasconi@unifi.it",
       "id": 1
     },
@@ -437,7 +437,7 @@
       }
     },
     {
-      "grade": null,
+      "grade": "25",
       "studentId": "2",
       "courseId": 1,
       "id": 5,
@@ -503,18 +503,12 @@
         "email": "riccardo.celli@gmail.com",
         "id": 3
       }
-    },
-    {
-      "grade": null,
-      "studentId": "1",
-      "courseId": 6,
-      "id": 9
     }
   ],
   "events": [
     {
       "date": "2018-07-13T11:07:16.645Z",
-      "approvedByAdvisor": true,
+      "approvedByAdvisor": false,
       "approved": false,
       "studentId": 1,
       "phdProgramId": "1",
@@ -566,7 +560,7 @@
       "phdProgramId": "1",
       "description": "Submit at another conference",
       "link": "www.anotherconference.it",
-      "proposedCfu": 3,
+      "proposedCfu": 4,
       "id": 2,
       "student": {
         "facultyId": [
@@ -606,7 +600,7 @@
     },
     {
       "date": "2018-07-13T11:09:08.151Z",
-      "approvedByAdvisor": true,
+      "approvedByAdvisor": false,
       "approved": false,
       "studentId": 2,
       "phdProgramId": "1",
@@ -728,7 +722,7 @@
   ],
   "reports": [
     {
-      "approvedByAdvisor": true,
+      "approvedByAdvisor": false,
       "approved": false,
       "studentId": 1,
       "phdProgramId": "1",
@@ -813,16 +807,6 @@
           }
         ]
       }
-    },
-    {
-      "approvedByAdvisor": false,
-      "approved": false,
-      "studentId": 1,
-      "phdProgramId": "1",
-      "year": 2018,
-      "proposedCfu": 5,
-      "id": 3,
-      "relation": "Seminary - Introduction to Funtional Python and Strict vs Lazy.pdf"
     }
   ],
   "staffs": [

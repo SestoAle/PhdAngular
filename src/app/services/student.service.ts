@@ -7,6 +7,8 @@ import { Student } from '../model/student';
 
 import { GeneralService } from './general.service';
 
+import { routes } from './routes';
+
 import { map } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -24,13 +26,14 @@ export class StudentService {
 
   // Get all students of a cycle, including their advisor
   getStudents(phdId, cycleId) {
-    return this.http.get<Student[]>(`${ this.general.uri }/phdPrograms/${ phdId }/cycleOfPhds/${ cycleId }/students?_expand=faculty`)
+    return this.http.get<Student[]>
+      (`${ routes.uri }/${ routes.phdProgram }/${ phdId }/${ routes.cycleOfPhd }/${ cycleId }/${ routes.student }?_expand=faculty`)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
   // Get a student
   getStudent(id) {
-    return this.http.get<Student>(`${ this.general.uri }/students/${ id }?_expand=faculty`)
+    return this.http.get<Student>(`${ routes.uri }/${ routes.student }/${ id }?_expand=faculty`)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
@@ -38,7 +41,8 @@ export class StudentService {
   addStudent(phdId, cycleId, student) {
     // Back-end operations
     delete student.faculty;
-    return this.http.post(`${ this.general.uri }/phdPrograms/${ phdId }/cycleOfPhds/${ cycleId }/students`, student)
+    return this.http.post
+      (`${ routes.uri }/${ routes.phdProgram }/${ phdId }/${ routes.cycleOfPhd }/${ cycleId }/${ routes.student }`, student)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
@@ -46,13 +50,13 @@ export class StudentService {
   putStudent(id, student) {
     // Back-end operation
     delete student.faculty;
-    return this.http.put(`${ this.general.uri }/students/${ id }`, student)
+    return this.http.put(`${ routes.uri }/${ routes.student }/${ id }`, student)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 
   // Delete a student
   deleteStudent(id) {
-    return this.http.delete(`${ this.general.uri }/students/${ id }`)
+    return this.http.delete(`${ routes.uri }/${ routes.student }/${ id }`)
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 }

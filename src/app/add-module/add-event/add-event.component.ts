@@ -39,7 +39,12 @@ export class AddEventComponent implements OnInit {
     if (eventId >= 0) {
       this.update = true;
       this.eventService.getEvent(eventId).subscribe(
-        result => { this.newEvent = result; },
+        result => {
+          if (result.approvedByAdvisor) {
+            this.location.back();
+          }
+          this.newEvent = result;
+        },
         error => { console.log(error); }
       );
     } else {
