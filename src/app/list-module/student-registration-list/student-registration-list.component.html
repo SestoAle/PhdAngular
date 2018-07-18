@@ -1,5 +1,6 @@
 <mat-nav-list>
-	<mat-list-item [routerLink]="['/course', registration.course.id]" *ngFor="let registration of registrations">
+	<app-search-bar #searchBar></app-search-bar>
+	<mat-list-item [routerLink]="['/course', registration.course.id]" *ngFor="let registration of registrations | search: searchBar.searchText: ['course', 'title']">
 		<mat-icon matListIcon>book</mat-icon>
 		<p matLine>{{registration.course.title}}</p>
 		<mat-icon *ngIf="registration.grade && registration.grade > 0">check</mat-icon>

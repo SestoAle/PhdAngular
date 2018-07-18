@@ -24,6 +24,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material';
 import { MatSidenavModule } from '@angular/material';
 import { MatCheckboxModule } from '@angular/material';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @NgModule({
   imports: [
@@ -48,14 +49,16 @@ import { MatCheckboxModule } from '@angular/material';
     BackComponent,
     ScheduleListComponent,
     RegistrationDialogComponent,
-    CourseComponent
+    CourseComponent,
+    SearchBarComponent
   ],
   exports: [
     EditRemoveComponent,
     BackComponent,
     ScheduleListComponent,
     RegistrationDialogComponent,
-    CourseComponent
+    CourseComponent,
+    SearchBarComponent
   ],
   entryComponents: [
     RegistrationDialogComponent

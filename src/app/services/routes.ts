@@ -1,5 +1,6 @@
 export enum routes {
   uri = 'http://localhost:3000',
+  auth = 'auth/login',
   phdProgram = 'phdPrograms',
   cycleOfPhd = 'cycleOfPhds',
   event = 'events',

@@ -29,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // FlexLayout
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { RegistrationDialogComponent } from './utility-module/registration-dialog/registration-dialog.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 
 @NgModule({

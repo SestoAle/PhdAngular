@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import { routes } from './routes';
+
 import { map } from 'rxjs/operators';
 import { GeneralService } from './general.service';
 
@@ -16,7 +18,7 @@ export class AuthenticationService {
   ) { }
 
   login(username: string, password: string) {
-    return this.http.post<any>(`${ this.general.uri }/auth/login`, {username: username, password: password}).pipe(
+    return this.http.post<any>(`${ routes.uri }/${ routes.auth }`, {username: username, password: password}).pipe(
       map(response => {
         const user = response.user;
         user.token = response.token;

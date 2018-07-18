@@ -76,4 +76,8 @@ export class AppComponent {
       }
     }
   }
+
+  generateError() {
+    this.phdProgramService.getPhd('error').subscribe();
+  }
 }

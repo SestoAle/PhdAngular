@@ -19,6 +19,7 @@ import { UtilityModuleModule } from '../utility-module/utility-module.module';
 import { ListRoutingModule } from './list-routing.module';
 
 import { FilterPipe } from '../pipes/filter.pipe';
+import { SearchPipe } from '../pipes/search.pipe';
 import { NgPipesModule } from 'ngx-pipes';
 
 // Material
@@ -70,6 +71,7 @@ import { MatCheckboxModule } from '@angular/material';
     StudentRegistrationListComponent,
     ReportListComponent,
     FilterPipe,
+    SearchPipe,
     ScholarListComponent
   ],
   exports: [

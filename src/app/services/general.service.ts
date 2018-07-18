@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 
 export class GeneralService {
 
-  public uri = 'http://localhost:3000';
   error = false;
 
   constructor() {

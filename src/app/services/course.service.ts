@@ -78,7 +78,7 @@ export class CourseService {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'multipart/form-data');
     headers.append('Accept', 'application/json');
-    this.http.post(`${ this.general.uri }`, formData, {headers: headers})
+    this.http.post(`${ routes.uri }`, formData, {headers: headers})
       .pipe(catchError(error => of(this.general.setError(true, error))));
   }
 }

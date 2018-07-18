@@ -560,7 +560,7 @@
       "phdProgramId": "1",
       "description": "Submit at another conference",
       "link": "www.anotherconference.it",
-      "proposedCfu": 4,
+      "proposedCfu": 3,
       "id": 2,
       "student": {
         "facultyId": [
