@@ -68,10 +68,10 @@ An example of the application is shown below:
 
 ## Reports
 A copy of the report (italian) can be found
-<a href="https://github.com/SestoAle/PhdAngular/raw/master/documents/presentation.pdf" download="presentation.pdf">here</a>.
+<a href="https://github.com/SestoAle/PhdAngular/raw/master/documents/report.pdf" download="report.pdf">here</a>.
 
 A copy of the presentation can be found
-<a href="https://github.com/SestoAle/PhdAngular/raw/master/documents/report.pdf" download="report.pdf">here</a>.
+<a href="https://github.com/SestoAle/PhdAngular/raw/master/documents/presentation.pdf" download="presentation.pdf">here</a>.
 
 ## License
 Licensed under the term of [MIT License](https://github.com/SestoAle/PhdAngular/blob/master/LICENSE).
