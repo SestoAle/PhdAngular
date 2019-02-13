@@ -1,6 +1,6 @@
 # PhdAngular
 
-The Idea was to make an User Interface Angular 2+ for the management of PhD
+The project aims to make an User Interface Angular 2+ for the management of PhD
 Programs.
 
 This interface is based on a back-end already created - but not complete - that will
@@ -43,7 +43,7 @@ the whole presentation is more coherent with the state of the database.
 The definition of the model is fundamental for the creation of DTOs that needs to reflect the
 structure of these classes.
 
-the login mechanism is based on the JsonWebToken framework: when the user enters his credentials, the system will make a post request to check if the user is saved in the db.
+The login mechanism is based on the JsonWebToken framework: when the user enters his credentials, the system will make a post request to check if the user is saved in the db.
 Then the server-side responds to the front-end with the user-data, including the
 token and the user role, that will be recorded on the local storage of web browser.
 The front-end will check if the user has the right role to use all the components and
