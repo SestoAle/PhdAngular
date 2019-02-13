@@ -51,7 +51,7 @@ all of the http requests will be made adding the user token.
 
 An example of the application is shown below:
 <p align="center">
-<img  src="/example/screen.png" width="70%" height="70%"/>
+<img  src="/example/screen.png" width="80%" height="80%"/>
 </p>
 
 ## Requirements
