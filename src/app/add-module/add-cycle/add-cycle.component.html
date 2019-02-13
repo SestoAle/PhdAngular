@@ -1,0 +1,26 @@
+<div class="grey back-container">
+	<app-back></app-back><span>Back</span>
+</div>
+<form name="form" (ngSubmit)="f.form.valid && addCycle()" #f="ngForm" novalidate>
+    <div class="form-group center-block" [ngClass]="{ 'has-error': f.submitted && !cyclenum.valid && !durationinyears.valid}">
+	<h4 class ="grey">PhD {{phd.name}}</h4>
+		<div *ngIf="error" class="alert alert-danger">Something is went wrong, try again!</div>
+		<mat-form-field class="full-width" >
+	    	<input [disabled]="update" matInput value="newCycle.numNumber" placeholder="Insert number in digits: {{ cycles.length > 0 ? 'last is ' + deromanize(lastCycle) : 'no cycle entered' }}" type="number" name="cyclenum" [(ngModel)]="newCycle.numNumber" #cyclenum="ngModel" required />
+		</mat-form-field>
+		<mat-error *ngIf="f.submitted && !cyclenum.valid">
+			The number is required!
+		</mat-error>
+		<mat-form-field class="full-width" >
+	    	<input matInput value="newCycle.durationInYears"  placeholder="Insert duration in years" type="number" name="durationinyears" [(ngModel)]="newCycle.durationInYears" #durationinyears="ngModel" required />
+		</mat-form-field>
+		<mat-error *ngIf="f.submitted && !durationinyears.valid">
+			The duration is required!
+		</mat-error>
+	</div>
+	
+	<div class="form-group" style="margin-top: 50px;">
+		<button mat-raised-button color="primary" [disabled]="loading">Add</button>
+		<img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+	</div>
+</form>

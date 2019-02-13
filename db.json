@@ -1,0 +1,874 @@
+{
+  "phdPrograms": [
+    {
+      "name": "Smart Computing",
+      "id": 1
+    },
+    {
+      "name": "Information Engineering",
+      "id": 2
+    }
+  ],
+  "cycleOfPhds": [
+    {
+      "phdProgramId": "1",
+      "id": 35,
+      "numNumber": 35,
+      "durationInYears": 5,
+      "num": "XXXV"
+    },
+    {
+      "phdProgramId": "1",
+      "id": 36,
+      "numNumber": 36,
+      "durationInYears": 3,
+      "num": "XXXVI"
+    },
+    {
+      "phdProgramId": "1",
+      "id": 37,
+      "numNumber": 37,
+      "durationInYears": 3,
+      "num": "XXXVII"
+    },
+    {
+      "phdProgramId": "1",
+      "numNumber": 38,
+      "durationInYears": 3,
+      "num": "XXXVIII",
+      "id": 38
+    },
+    {
+      "phdProgramId": "2",
+      "numNumber": 35,
+      "durationInYears": 3,
+      "num": "XXXV",
+      "id": 39
+    }
+  ],
+  "faculties": [
+    {
+      "role": "coordinator",
+      "phdProgramId": "1",
+      "cycleOfPhdId": "35",
+      "firstname": "Paolo",
+      "lastname": "Frasconi",
+      "username": "coord",
+      "password": "coord",
+      "webpage": "www.paolo.it",
+      "email": "paolo.frasconi@unifi.it",
+      "id": 1
+    },
+    {
+      "role": "faculty",
+      "phdProgramId": "1",
+      "cycleOfPhdId": "35",
+      "firstname": "Pietro",
+      "lastname": "Pala",
+      "username": "faculty",
+      "password": "faculty",
+      "webpage": "www.pietro.it",
+      "email": "pietro.pala@unifi.it",
+      "id": 2
+    },
+    {
+      "role": "coordinator",
+      "phdProgramId": "2",
+      "cycleOfPhdId": "39",
+      "firstname": "Luigi",
+      "lastname": "Chisci",
+      "username": "coord2",
+      "password": "coord2",
+      "webpage": "www.sito.it",
+      "email": "luigi.chisci@unifi.it",
+      "id": 3
+    }
+  ],
+  "students": [
+    {
+      "facultyId": [
+        2
+      ],
+      "externalAdvisor": {
+        "role": "scholar",
+        "firstname": "Kenau",
+        "lastname": "Reeves",
+        "webpage": "www.kenaureeves.it"
+      },
+      "role": "student",
+      "phdProgramId": "1",
+      "cycleOfPhdId": "35",
+      "firstname": "Alessandro",
+      "lastname": "Sestini",
+      "username": "student",
+      "password": "student",
+      "webpage": "www.alessandrosestini.it",
+      "email": "alessandrosestini92@gmail.com",
+      "id": 1,
+      "faculties": [
+        {
+          "role": "faculty",
+          "phdProgramId": "1",
+          "cycleOfPhdId": "35",
+          "firstname": "Pietro",
+          "lastname": "Pala",
+          "username": "faculty",
+          "password": "faculty",
+          "webpage": "www.pietro.it",
+          "email": "pietro.pala@unifi.it",
+          "id": 2
+        }
+      ]
+    },
+    {
+      "facultyId": [
+        2
+      ],
+      "externalAdvisor": {
+        "role": "scholar"
+      },
+      "role": "student",
+      "phdProgramId": "1",
+      "cycleOfPhdId": "35",
+      "firstname": "Francesco",
+      "lastname": "Lombardi",
+      "username": "francesco",
+      "password": "francesco",
+      "webpage": "www.francescolombardi.it",
+      "email": "francescolombardi93@gmail.com",
+      "id": 2,
+      "faculties": [
+        {
+          "role": "faculty",
+          "phdProgramId": "1",
+          "cycleOfPhdId": "35",
+          "firstname": "Pietro",
+          "lastname": "Pala",
+          "username": "pietro",
+          "password": "pietro",
+          "webpage": "www.pietro.it",
+          "email": "pietro.pala@unifi.it",
+          "id": 2
+        }
+      ]
+    },
+    {
+      "facultyId": [
+        3
+      ],
+      "externalAdvisor": {
+        "role": "scholar"
+      },
+      "role": "student",
+      "phdProgramId": 2,
+      "cycleOfPhdId": "39",
+      "firstname": "Riccardo",
+      "lastname": "Celli",
+      "username": "riccardo",
+      "password": "riccardo",
+      "webpage": "www.sito.it",
+      "email": "riccardo.celli@gmail.com",
+      "id": 3
+    }
+  ],
+  "courses": [
+    {
+      "title": "GPU programming basics",
+      "abstract": "GPU architecture. Comparison w.r.t CPU architecture. SIMT. What is CUDA. Hello World in CUDA. CUDA Memory organization: introduction. Threads organization and setup. Exercises. Grids, blocks and threads. Thread scheduling. Threads and divergence. Good practices in blocks and threads organization. 2D CUDA kernels. 3D CUDA kernels. CUDA memory hierarchy. Shared, device and constant memory. Efficient CUDA programming. Tiling: introduction. Tiling: how to. Synchronization barriersd. Phase-based processing. Border checking. Performance considerations. DRAM burst. Memory coalescing. Atomic instructions. Privatization. Exercises: Histogram computation. 1D convolution. How to use constant memory.. Tiling 2D convolution. Tiling. Tiling performance evaluation. CUDA parallel patterns: Convolution/Stencil. Reduction. Scan. Lab activity: 2D convolution for image filtering. Handling 2D borders. Using constant memory for convolution weights. Conditions for tiling and computation.",
+      "site": "www.gpuprogrammingbasics.com",
+      "duration": 6,
+      "cfu": 3,
+      "phdProgramId": "1",
+      "id": 1,
+      "teacherIds": {
+        "scholars": [
+          1
+        ],
+        "faculties": [
+          1,
+          2
+        ]
+      },
+      "schedules": [
+        {
+          "day": "Mercoledì 12",
+          "beginTime": "12:00",
+          "endTime": "13:00",
+          "location": "Morgagni"
+        }
+      ],
+      "materials": [
+        {
+          "link": "Image and Video Analysis - Relazione.pdf",
+          "text": "Download this file for the next week",
+          "date": "2018-07-13T10:36:05.433Z"
+        }
+      ],
+      "year": 2018
+    },
+    {
+      "schedules": [
+        {
+          "day": "23 Feb",
+          "beginTime": "12:00",
+          "endTime": "13:00",
+          "location": "Morgagni"
+        },
+        {
+          "day": "25 Feb",
+          "beginTime": "12:00",
+          "endTime": "13:00",
+          "location": "Morgagni"
+        }
+      ],
+      "teacherIds": {
+        "scholars": [
+          1,
+          2
+        ],
+        "faculties": [
+          1,
+          2
+        ]
+      },
+      "materials": [],
+      "title": "Introduction to deep learning with Keras",
+      "abstract": "Neural networks foundations: MLP, creating a simple network with Keras, towards deep learning Keras installation and API Deep learning with ConvNets, DCNN layers, experimenting with basic datasets, very deep networks, Generative Adversarial Networks, GANs and images.",
+      "site": "www.sito.it",
+      "duration": 3,
+      "cfu": 3,
+      "phdProgramId": "1",
+      "id": 4,
+      "year": 2018
+    },
+    {
+      "schedules": [
+        {
+          "day": "23 June",
+          "beginTime": "12:00",
+          "endTime": "13:00",
+          "location": "Morgagni"
+        }
+      ],
+      "teacherIds": {
+        "scholars": [
+          7
+        ],
+        "faculties": [
+          1,
+          2
+        ]
+      },
+      "materials": [],
+      "title": "Real-time systems: 50 years of evolution",
+      "abstract": "System performance is affected by a number of uncertainties: the input data, the state of computing devices (e.g. cache content), contention over the interconnection, etc. How should the uncertainties be accounted for? After establishing a connection with other approaches (benchmarking, stochastic analysis, etc.), the \"real-time\" perspective to the management of uncertainties will be illustrated. We will review the main techniques to analyze and design real-time systems. Finally, we will illustrate what the real-time research can offer to the recent challenges in cloud computing, IoT and cyber-physical systems.",
+      "site": "www.sito.it",
+      "duration": 3,
+      "cfu": 3,
+      "phdProgramId": "1",
+      "id": 5,
+      "year": 2018
+    },
+    {
+      "schedules": [
+        {
+          "day": "22 feb",
+          "beginTime": "12:00",
+          "endTime": "13:00",
+          "location": "Morgagni"
+        }
+      ],
+      "teacherIds": {
+        "scholars": [
+          1
+        ],
+        "faculties": []
+      },
+      "materials": [
+        {
+          "link": "Image and Video Analysis - Relazione.pdf",
+          "text": "Il giorno 22 febbraio ci sarà lezione. Scaricate il file qui sotto",
+          "date": "2018-07-09T09:07:17.354Z"
+        }
+      ],
+      "title": "Stochastic Model Checking ",
+      "abstract": "The course introduces the use of formal methods for the specification and verification of quantitative properties of concurrent distributed systems. In particular we look at the foundations of such techniques among which various kinds of Markov chains and related probabilistic and stochastic process algebras for the modelling of systems, and to probabilistic and stochastic temporal logics for the specification of properties. Furthermore, the basic probabilistic and stochastic model-checking algorithms will be illustrated. Hands-on experience will be provided by performing smaller case studies in modelling and verification using the state-of-the-art PRISM model checker. Some lectures will be dedicated to illustrate more advanced recent developments and perspectives for future research in this field in particular in relation to the modelling and verification of smart and collective systems.",
+      "site": "www.sito",
+      "duration": 3,
+      "cfu": 3,
+      "phdProgramId": "1",
+      "id": 6,
+      "year": 2018
+    },
+    {
+      "schedules": [],
+      "teacherIds": {
+        "scholars": [
+          3
+        ],
+        "faculties": [
+          3
+        ]
+      },
+      "materials": [],
+      "title": "Image and video forensics : fundamentals and applications",
+      "year": 2018,
+      "abstract": "Nowadays the pervasiveness of images and videos as primary source of information has led the image forensics community to question about their reliability and integrity more and more often. A huge amount of multimedia contents is generated in disparate manners with different devices and then uploaded on the web and shared through social platforms. Image and video forensics was born to deal with the need to verify the trustworthiness of such multimedia contents determining their authenticity and origin. In fact, recovering from digital evidence as much information as possible about the acquiring device or on the processing that has been applied could be fundamental to understand if an image is authentic or has been manipulated to change its meaning. In particular, it could be of basic importance to succeed in reconstructing the history of a specific image or video that might help in addressing an on-going forensic investigation or in debunking a certain news. Different forensic methodologies and tools are devised and employed so far to analyze digital evidences in order to reconstruct what has happened to image or video contents. The goal of this course is to provide fundamentals on different methodologies in the field of image and video forensics especially regarding source identification and tampering detection. The emphasis of the course will be on main state-of-the-art technologies and their application in different scenarios.",
+      "site": "www.sito.it",
+      "duration": 3,
+      "cfu": 3,
+      "phdProgramId": "2",
+      "id": 7
+    }
+  ],
+  "scholars": [
+    {
+      "role": "scholar",
+      "firstname": "Marco",
+      "lastname": "Bertini",
+      "username": "scholar",
+      "password": "scholar",
+      "phdId": 1,
+      "phdProgramId": "1",
+      "id": 1
+    },
+    {
+      "role": "scholar",
+      "firstname": "Lorenzo",
+      "lastname": "Seidenari",
+      "username": "lorenzo",
+      "password": "lorenzo",
+      "phdId": 1,
+      "phdProgramId": "1",
+      "id": 2
+    },
+    {
+      "role": "scholar",
+      "firstname": "Roberto",
+      "lastname": "Caldelli",
+      "username": "scholar2",
+      "password": "scholar2",
+      "phdId": 2,
+      "phdProgramId": "2",
+      "id": 3
+    }
+  ],
+  "registrations": [
+    {
+      "grade": "25",
+      "studentId": "1",
+      "courseId": 1,
+      "id": 1,
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar",
+          "firstname": "Kenau",
+          "lastname": "Reeves",
+          "webpage": "www.kenaureeves.it"
+        },
+        "role": "student",
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Alessandro",
+        "lastname": "Sestini",
+        "username": "student",
+        "password": "student",
+        "webpage": "www.alessandrosestini.it",
+        "email": "alessandrosestini92@gmail.com",
+        "id": 1,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "faculty",
+            "password": "faculty",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "grade": null,
+      "studentId": "1",
+      "courseId": 4,
+      "id": 2,
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar",
+          "firstname": "Kenau",
+          "lastname": "Reeves",
+          "webpage": "www.kenaureeves.it"
+        },
+        "role": "student",
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Alessandro",
+        "lastname": "Sestini",
+        "username": "alessandro",
+        "password": "alessandro",
+        "webpage": "www.alessandrosestini.it",
+        "email": "alessandrosestini92@gmail.com",
+        "id": 1,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "pietro",
+            "password": "pietro",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "grade": "25",
+      "studentId": "2",
+      "courseId": 1,
+      "id": 5,
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar"
+        },
+        "role": "student",
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Francesco",
+        "lastname": "Lombardi",
+        "username": "francesco",
+        "password": "francesco",
+        "webpage": "www.francescolombardi.it",
+        "email": "francescolombardi93@gmail.com",
+        "id": 2,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "pietro",
+            "password": "pietro",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "grade": null,
+      "studentId": "2",
+      "courseId": 5,
+      "id": 6
+    },
+    {
+      "grade": "30",
+      "studentId": "3",
+      "courseId": 7,
+      "id": 8,
+      "student": {
+        "facultyId": [
+          3
+        ],
+        "externalAdvisor": {
+          "role": "scholar"
+        },
+        "role": "student",
+        "phdProgramId": 2,
+        "cycleOfPhdId": "39",
+        "firstname": "Riccardo",
+        "lastname": "Celli",
+        "username": "riccardo",
+        "password": "riccardo",
+        "webpage": "www.sito.it",
+        "email": "riccardo.celli@gmail.com",
+        "id": 3
+      }
+    },
+    {
+      "grade": null,
+      "studentId": "1",
+      "courseId": 6,
+      "id": 9
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-07-13T11:07:16.645Z",
+      "approvedByAdvisor": false,
+      "approved": false,
+      "studentId": 1,
+      "phdProgramId": "1",
+      "description": "Submit at conference",
+      "link": "www.conference.it",
+      "proposedCfu": 3,
+      "id": 1,
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar",
+          "firstname": "Kenau",
+          "lastname": "Reeves",
+          "webpage": "www.kenaureeves.it"
+        },
+        "role": "student",
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Alessandro",
+        "lastname": "Sestini",
+        "username": "alessandro",
+        "password": "alessandro",
+        "webpage": "www.alessandrosestini.it",
+        "email": "alessandrosestini92@gmail.com",
+        "id": 1,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "pietro",
+            "password": "pietro",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "date": "2018-07-13T11:07:40.162Z",
+      "approvedByAdvisor": false,
+      "approved": false,
+      "studentId": 1,
+      "phdProgramId": "1",
+      "description": "Submit at another conference",
+      "link": "www.anotherconference.it",
+      "proposedCfu": 3,
+      "id": 2,
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar",
+          "firstname": "Kenau",
+          "lastname": "Reeves",
+          "webpage": "www.kenaureeves.it"
+        },
+        "role": "student",
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Alessandro",
+        "lastname": "Sestini",
+        "username": "alessandro",
+        "password": "alessandro",
+        "webpage": "www.alessandrosestini.it",
+        "email": "alessandrosestini92@gmail.com",
+        "id": 1,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "pietro",
+            "password": "pietro",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "date": "2018-07-13T11:09:08.151Z",
+      "approvedByAdvisor": false,
+      "approved": false,
+      "studentId": 2,
+      "phdProgramId": "1",
+      "description": "Erasmus at Oulu",
+      "link": "www.erasmus.it",
+      "proposedCfu": 3,
+      "id": 3,
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar"
+        },
+        "role": "student",
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Francesco",
+        "lastname": "Lombardi",
+        "username": "francesco",
+        "password": "francesco",
+        "webpage": "www.francescolombardi.it",
+        "email": "francescolombardi93@gmail.com",
+        "id": 2,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "pietro",
+            "password": "pietro",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "date": "2018-07-18T11:11:38.920Z",
+      "approvedByAdvisor": true,
+      "approved": true,
+      "studentId": 1,
+      "phdProgramId": "1",
+      "description": "asd",
+      "link": "asd",
+      "proposedCfu": 4,
+      "id": 4,
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar",
+          "firstname": "Kenau",
+          "lastname": "Reeves",
+          "webpage": "www.kenaureeves.it"
+        },
+        "role": "student",
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Alessandro",
+        "lastname": "Sestini",
+        "username": "student",
+        "password": "student",
+        "webpage": "www.alessandrosestini.it",
+        "email": "alessandrosestini92@gmail.com",
+        "id": 1,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "faculty",
+            "password": "faculty",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
+    }
+  ],
+  "registeredCourses": [
+    {
+      "title": "GPU programming basics",
+      "abstract": "GPU architecture. Comparison w.r.t CPU architecture. SIMT. What is CUDA. Hello World in CUDA. CUDA Memory organization: introduction. Threads organization and setup. Exercises. Grids, blocks and threads. Thread scheduling. Threads and divergence. Good practices in blocks and threads organization. 2D CUDA kernels. 3D CUDA kernels. CUDA memory hierarchy. Shared, device and constant memory. Efficient CUDA programming. Tiling: introduction. Tiling: how to. Synchronization barriersd. Phase-based processing. Border checking. Performance considerations. DRAM burst. Memory coalescing. Atomic instructions. Privatization. Exercises: Histogram computation. 1D convolution. How to use constant memory.. Tiling 2D convolution. Tiling. Tiling performance evaluation. CUDA parallel patterns: Convolution/Stencil. Reduction. Scan. Lab activity: 2D convolution for image filtering. Handling 2D borders. Using constant memory for convolution weights. Conditions for tiling and computation.",
+      "site": "www.sito.it",
+      "duration": 6,
+      "cfu": 3,
+      "phdProgramId": "1",
+      "id": 1,
+      "teacherIds": {
+        "scholars": [
+          2
+        ],
+        "faculties": [
+          2
+        ]
+      },
+      "schedules": [
+        {
+          "day": "Thu 16 Feb 2018",
+          "beginTime": "11:00",
+          "endTime": "12:00",
+          "location": "Morgagni"
+        },
+        {
+          "day": "Thu 18 Feb 2018",
+          "beginTime": "11:00",
+          "endTime": "12:00",
+          "location": "Morgagni"
+        },
+        {
+          "day": "Thu 20 Feb 2018",
+          "beginTime": "11:00",
+          "endTime": "12:00",
+          "location": "Morgagni"
+        },
+        {
+          "day": "Thu 22 Feb 2018",
+          "beginTime": "11:00",
+          "endTime": "12:00",
+          "location": "Santa Marta"
+        }
+      ],
+      "materials": [
+        {
+          "link": null,
+          "text": "Tomorrow there will be no lesson",
+          "date": "2018-07-07T16:28:57.537Z"
+        },
+        {
+          "link": "0_MockUp.pdf",
+          "text": "Download this file",
+          "date": "2018-07-07T16:29:11.487Z"
+        }
+      ]
+    },
+    {
+      "title": "Fundamental of internet of things",
+      "abstract": "aksjlkajd\naskdjalsd\nasdnakldj\n",
+      "site": "www.sito.it",
+      "duration": 9,
+      "cfu": 3,
+      "phdProgramId": "1",
+      "id": 2,
+      "teacherIds": {
+        "scholars": [],
+        "faculties": []
+      },
+      "schedules": [],
+      "materials": [
+        {
+          "link": null,
+          "text": "Ciao ciao ale",
+          "date": "2018-07-08T10:27:10.071Z"
+        }
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "approvedByAdvisor": false,
+      "approved": false,
+      "studentId": 1,
+      "phdProgramId": "1",
+      "year": 2018,
+      "proposedCfu": 2,
+      "relation": "Image and Video Analysis - Relazione.pdf",
+      "id": 1,
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar",
+          "firstname": "Kenau",
+          "lastname": "Reeves",
+          "webpage": "www.kenaureeves.it"
+        },
+        "role": "student",
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Alessandro",
+        "lastname": "Sestini",
+        "username": "alessandro",
+        "password": "alessandro",
+        "webpage": "www.alessandrosestini.it",
+        "email": "alessandrosestini92@gmail.com",
+        "id": 1,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "pietro",
+            "password": "pietro",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
+    },
+    {
+      "approvedByAdvisor": false,
+      "approved": false,
+      "studentId": 2,
+      "phdProgramId": "1",
+      "year": 2018,
+      "proposedCfu": 5,
+      "id": 2,
+      "relation": "screenshot.pdf",
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar"
+        },
+        "role": "student",
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Francesco",
+        "lastname": "Lombardi",
+        "username": "francesco",
+        "password": "francesco",
+        "webpage": "www.francescolombardi.it",
+        "email": "francescolombardi93@gmail.com",
+        "id": 2,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "pietro",
+            "password": "pietro",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
+    }
+  ],
+  "staffs": [
+    {
+      "id": 6,
+      "username": "staff",
+      "password": "staff",
+      "firstName": "Staff",
+      "lastName": "User",
+      "role": "staff"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+
+<div class="grey" style="text-align: right">
+	<a mat-button [routerLink]="['/add-phd', -1]">
+		<mat-icon> add</mat-icon>
+		<span>Add PhD Program</span>
+	</a>
+</div>
+<mat-nav-list>
+    <mat-list-item [routerLink] = "['/phd', phd.id]" *ngFor="let phd of phdPrograms">
+    <mat-icon matListIcon>folder</mat-icon>
+    <span matLine>{{phd.name}}</span>
+	
+    <app-edit-remove [model]="phd" [edit_link]="['add-phd', phd.id]" (cancelModel)="removePhd($event, phd.id)"></app-edit-remove>
+   	
+    </mat-list-item>
+</mat-nav-list>

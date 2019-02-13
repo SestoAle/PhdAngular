@@ -1,0 +1,10 @@
+<mat-nav-list>
+    <mat-list-item [routerLink] = "['/members', phd.id, cycle.id]"  *ngFor="let cycle of cycles">
+	    <mat-icon matListIcon>folder</mat-icon>
+	    <a matLine>Cycle: {{cycle.num}}</a>
+	    <p matLine>Duration in years: {{cycle.durationInYears}}</p>
+	    
+	    <app-edit-remove [model]="cycle" [edit_link]="['add-cycle', phd.id, cycle.id]" (cancelModel)="removeCycle($event, cycle.id)"></app-edit-remove>
+   	
+    </mat-list-item>
+</mat-nav-list>

@@ -1,0 +1,30 @@
+<h2 class="grey"><app-back></app-back>{{phd.name}} - cycle {{cycle.num}}</h2>
+<mat-tab-group #tab (selectedTabChange) = "ngOnInit(); tabService.saveIndex(tab.selectedIndex, 'members')" [selectedIndex]="tabService.getIndex('members')" style="margin-top: 10px;" mat-stretch-tabs>
+  <mat-tab label="Faculty">
+  	<div class="grey" style="text-align: right">
+		<a mat-button [routerLink]="['/add-member', phd.id, cycle.id, 'faculty', -1]">
+			<mat-icon>add</mat-icon>
+			<span>Add Member</span>
+		</a>
+	</div>
+    <app-faculty-list [phd]="phd" [cycle]="cycle" [faculties]="faculties" (updateFaculty)="ngOnInit()"></app-faculty-list>
+  </mat-tab>
+  <mat-tab label="Students">
+    <div class="grey" style="text-align: right">
+		<a mat-button [routerLink]="['/add-member', phd.id, cycle.id, 'student', -1]">
+			<mat-icon>add</mat-icon>
+			<span>Add Member</span>
+		</a>
+	</div>
+	<app-student-list [phd]="phd" [cycle]="cycle" [students]="students" (removingStudent)="ngOnInit()"></app-student-list>
+  </mat-tab>
+  <mat-tab label="Scholars">
+    <div class="grey" style="text-align: right">
+		<a mat-button [routerLink]="['/add-member', phd.id, cycle.id, 'scholar', -1]">
+			<mat-icon>add</mat-icon>
+			<span>Add Member</span>
+		</a>
+	</div>
+	<app-scholar-list [phd]="phd" [cycle]="cycle" [scholars]="scholars" (removingScholar)="ngOnInit()"></app-scholar-list>
+  </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,83 @@
+.grey{
+	color: grey;
+}
+
+.mat-card {
+	width: 100%;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.form-group {
+	display: block !important;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+.alert {
+	width: 80%;
+	display: block !important;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.mat-error {
+	font-size: 12px; 
+}
+
+.mat-list-item {
+	margin-bottom: 20px;
+}
+
+.alert {
+	margin-top:10px;
+}
+
+.back-container {
+	display:flex
+}
+
+.radio {
+	margin-right: 20px;
+}
+
+.edit-text {
+	margin-left: 5px;
+	color: grey !important;
+}
+
+.edit-link {
+	margin-left: 5px;
+	float: right;
+	color:grey !important
+}
+
+a.edit-link:hover, a.edit-text:hover {
+	color:black !important
+}
+
+.edit-remove {
+	margin: 0; 
+	text-align: right;
+	color: red;
+}
+
+.add-schedule {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.add-schedule > * {
+	margin-top: 10px;
+	margin: auto;
+	width: 30%;
+}
+
+.mat-line {
+    word-wrap: break-word !important;
+    white-space: pre-wrap !important;
+    height:initial !important;
+}

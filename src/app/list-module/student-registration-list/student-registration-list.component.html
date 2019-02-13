@@ -1,0 +1,9 @@
+<mat-nav-list>
+	<app-search-bar #searchBar></app-search-bar>
+	<mat-list-item [routerLink]="['/course', registration.course.id]" *ngFor="let registration of registrations | search: searchBar.searchText: ['course', 'title']">
+		<mat-icon matListIcon>book</mat-icon>
+		<p matLine>{{registration.course.title}}</p>
+		<mat-icon *ngIf="registration.grade && registration.grade > 0">check</mat-icon>
+		<app-edit-remove *ngIf="!registration.grade || registration.grade === 0" [model]="registration" (cancelModel)="removeRegistration($event, registration)"></app-edit-remove>
+	</mat-list-item>
+</mat-nav-list>
