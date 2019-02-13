@@ -1,9 +1,0 @@
-<h2 class="grey">{{currentUser.firstname}} {{currentUser.lastname}}</h2>
-<mat-tab-group (selectedTabChange) = "ngOnInit(); tabService.saveIndex(tab.selectedIndex, 'faculty')" [selectedIndex]="tabService.getIndex('faculty')" #tab mat-stretch-tabs>
-		<mat-tab label="Registered courses">
-		<app-course-list [faculty]="currentUser" [courses]="courses" (courseClick)="goToCourse($event)"></app-course-list>
-	</mat-tab>
-	<mat-tab *ngIf="currentUser.role=='faculty'" label="Student events">
-		<app-faculty-event-list (approvingEvent)="approveEvent($event)" (approvingReport)="approveReport($event)" [students]="students"></app-faculty-event-list>
-	</mat-tab>
-</mat-tab-group>
