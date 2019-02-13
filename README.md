@@ -33,7 +33,7 @@ The development of the application was made following 2 basic steps:
 
 The implementation was made following the [Material Design](https://material.io/design/) guidelines. 
 
-The framework [JsonServer](https://github.com/typicode/json-server was used for
+The framework [JsonServer](https://github.com/typicode/json-server) was used for
 faking a REST back-end.
 
 In this work it has been used a *component driven* approach: the entities have only the
