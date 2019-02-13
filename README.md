@@ -7,7 +7,7 @@ This interface is based on a back-end already created - but not complete - that 
 offer REST services.
 
 The development of the application was made following 2 basic steps:
-Requirements Analysis and Implementation.
+*Requirements Analysis* and *Implementation*.
 
 ## Run
 1. Download the [repository](https://github.com/SestoAle/PhdAngular);
@@ -27,8 +27,9 @@ Requirements Analysis and Implementation.
 | **Student**                            | student         | student  |
 
 ## Implementation
-![Mock Up](0_MockUp.pdf)
-Application example:
+The implementation was made following the [Material Design](https://material.io/design/) guidelines. 
+
+
 
 ![Application example](/example/screen.png)
 
