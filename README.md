@@ -60,3 +60,6 @@ An example of the application is shown below:
 | **json-server**                                          |[here](https://github.com/typicode/json-server)   |    Yes   |
 | **jsonwebtoken**                                         |[here](https://github.com/auth0/node-jsonwebtoken)|    Yes   |
 | **Angular: 6.0.5**                                       |[here](https://cli.angular.io)|    Yes   |
+
+## License
+Licensed under the term of [MIT License](https://github.com/SestoAle/PhdAngular/blob/master/LICENSE).
