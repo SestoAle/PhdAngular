@@ -1,8 +1,13 @@
 # PhdAngular
 
-## Introduction
+The Idea was to make an User Interface Angular 2+ for the management of PhD
+Programs
 
-This project aims to build a User Interface Angular 2+ for the management of PhD programs.
+This interface is based on a back-end already created - but not complete - that will
+offer REST services
+
+The development of the application was made following 2 basic steps:
+Requirements Analysis and Implementation
 
 ## Run
 1. Download the [repository](https://github.com/SestoAle/PhdAngular);
