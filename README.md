@@ -1,5 +1,9 @@
 # PhdAngular
 
+<p align="center">
+<img  src="/example/screen.png" width="80%" height="80%"/>
+</p>
+
 The project aims to make an User Interface Angular 2+ for the management of PhD
 Programs.
 
@@ -50,8 +54,9 @@ The front-end will check if the user has the right role to use all the component
 all of the http requests will be made adding the user token.
 
 An example of the application is shown below:
+
 <p align="center">
-<img  src="/example/screen.png" width="80%" height="80%"/>
+<img  src="https://media.giphy.com/media/2vr9PqERttAybPewdL/giphy.gif" width="80%" height="80%"/>
 </p>
 
 ## Requirements
