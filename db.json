@@ -5,7 +5,7 @@
       "id": 1
     },
     {
-      "name": "Machine Learning",
+      "name": "Information Engineering",
       "id": 2
     }
   ],
@@ -355,7 +355,7 @@
   ],
   "registrations": [
     {
-      "grade": null,
+      "grade": "25",
       "studentId": "1",
       "courseId": 1,
       "id": 1,
@@ -374,8 +374,8 @@
         "cycleOfPhdId": "35",
         "firstname": "Alessandro",
         "lastname": "Sestini",
-        "username": "alessandro",
-        "password": "alessandro",
+        "username": "student",
+        "password": "student",
         "webpage": "www.alessandrosestini.it",
         "email": "alessandrosestini92@gmail.com",
         "id": 1,
@@ -386,8 +386,8 @@
             "cycleOfPhdId": "35",
             "firstname": "Pietro",
             "lastname": "Pala",
-            "username": "pietro",
-            "password": "pietro",
+            "username": "faculty",
+            "password": "faculty",
             "webpage": "www.pietro.it",
             "email": "pietro.pala@unifi.it",
             "id": 2
@@ -503,6 +503,12 @@
         "email": "riccardo.celli@gmail.com",
         "id": 3
       }
+    },
+    {
+      "grade": null,
+      "studentId": "1",
+      "courseId": 6,
+      "id": 9
     }
   ],
   "events": [
@@ -640,6 +646,52 @@
           }
         ]
       }
+    },
+    {
+      "date": "2018-07-18T11:11:38.920Z",
+      "approvedByAdvisor": true,
+      "approved": true,
+      "studentId": 1,
+      "phdProgramId": "1",
+      "description": "asd",
+      "link": "asd",
+      "proposedCfu": 4,
+      "id": 4,
+      "student": {
+        "facultyId": [
+          2
+        ],
+        "externalAdvisor": {
+          "role": "scholar",
+          "firstname": "Kenau",
+          "lastname": "Reeves",
+          "webpage": "www.kenaureeves.it"
+        },
+        "role": "student",
+        "phdProgramId": "1",
+        "cycleOfPhdId": "35",
+        "firstname": "Alessandro",
+        "lastname": "Sestini",
+        "username": "student",
+        "password": "student",
+        "webpage": "www.alessandrosestini.it",
+        "email": "alessandrosestini92@gmail.com",
+        "id": 1,
+        "faculties": [
+          {
+            "role": "faculty",
+            "phdProgramId": "1",
+            "cycleOfPhdId": "35",
+            "firstname": "Pietro",
+            "lastname": "Pala",
+            "username": "faculty",
+            "password": "faculty",
+            "webpage": "www.pietro.it",
+            "email": "pietro.pala@unifi.it",
+            "id": 2
+          }
+        ]
+      }
     }
   ],
   "registeredCourses": [
@@ -727,7 +779,7 @@
       "studentId": 1,
       "phdProgramId": "1",
       "year": 2018,
-      "proposedCfu": 3,
+      "proposedCfu": 2,
       "relation": "Image and Video Analysis - Relazione.pdf",
       "id": 1,
       "student": {
