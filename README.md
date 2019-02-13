@@ -1,13 +1,13 @@
 # PhdAngular
 
 The Idea was to make an User Interface Angular 2+ for the management of PhD
-Programs
+Programs.
 
 This interface is based on a back-end already created - but not complete - that will
-offer REST services
+offer REST services.
 
 The development of the application was made following 2 basic steps:
-Requirements Analysis and Implementation
+Requirements Analysis and Implementation.
 
 ## Run
 1. Download the [repository](https://github.com/SestoAle/PhdAngular);
@@ -26,7 +26,8 @@ Requirements Analysis and Implementation
 | **Scholar**                            | scholar         | scholar  |
 | **Student**                            | student         | student  |
 
-## Example
+## Implementation
+![Mock Up](0_MockUp.pdf)
 Application example:
 
 ![Application example](/example/screen.png)
